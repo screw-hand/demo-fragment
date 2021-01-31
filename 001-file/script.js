@@ -1,27 +1,41 @@
 (function () {
+  // 下载文件
+  function downloadFile(fileName, file) {
+    const isBlob = file instanceof Blob
+    const href = isBlob ? URL.createObjectURL(file) : file
 
-  // File对象
-  let hwFile = new File(['Hello World!'], 'hello-world.txt', { type: 'text/plain' })
-  console.log(hwFile)
-
-  const newFileBtn = document.querySelector('#new-file')
-  newFileBtn.onclick = function () {
-    // 创建文件
-    let file = new File(['Hello World!'], 'hello-world.txt', { type: 'text/plain' })
-    console.log(hwFile)
-
-    // 下载文件
-    // window.open(URL.createObjectURL(file))
     const aLink = document.createElement('a')
-    aLink.setAttribute('href', URL.createObjectURL(file))
-    aLink.setAttribute('download', file.name)
+    aLink.setAttribute('href', href)
+    aLink.setAttribute('download', fileName)
     document.body.append(aLink)
     aLink.click()
     document.body.removeChild(aLink)
   }
 
-  const downloadNewFileLink = document.querySelector('#download-new-file')
-  downloadNewFileLink.setAttribute('href', URL.createObjectURL(hwFile))
-  aLink.setAttribute('download', hwFile.name)
+  const newFileBtn = document.querySelector('#new-file')
+  newFileBtn.onclick = function () {
+    // 创建文件
+    const file = new File([JSON.stringify({ hello: "world" })], 'hello-world.json', { type: 'application/json' })
+    console.log(file)
+
+    downloadFile(file.name, file)
+  }
+
+  const blobBtn = document.querySelector('#blob')
+  blobBtn.onclick = function () {
+    const blob = new Blob([JSON.stringify({ hello: "world" })], { type: 'application/json' })
+    console.log(blob)
+    blob.text().then(x => console.log(x))
+
+    downloadFile('hello-world.json', blob)
+  }
+
+  const dataURLBtn = document.querySelector('#data-url')
+  dataURLBtn.onclick = function () {
+    const dataURL = `data:application/json,${JSON.stringify({ "hello": "world" })}`
+    console.log(dataURL)
+
+    downloadFile('hello-world.json', dataURL)
+  }
 
 })();
