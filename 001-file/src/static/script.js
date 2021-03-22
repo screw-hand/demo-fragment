@@ -38,4 +38,35 @@
     downloadFile('hello-world.json', dataURL)
   }
 
+  const downloadApiBtn = document.querySelector('#download-api-btn')
+  downloadApiBtn.onclick = function () {
+    const fileName = document.querySelector('#file-name').value
+    const type = document.querySelector('#download-type').value
+
+    fetch(`/api/file/download?fileName=${fileName}&type=${type}`)
+      .then(async response => {
+        if (type === 'file') {
+          let blob = await response.blob()
+          downloadFile(fileName, blob)
+          // 也可以使用window.open
+          // window.open(`/api/file/download?fileName=${fileName}&type=${type}`, '_blank')
+          return
+        }
+
+        let json = await response.json()
+
+        if (json && json.code === 1) {
+          const data = json.data
+          if (type === 'content') {
+            const blob = new Blob([data.toString()])
+            downloadFile(fileName, blob)
+          } else if (type === 'base64') {
+            downloadFile(fileName, data)
+          } else if (type === 'path') {
+            window.open(data, '_blank')
+          }
+        }
+      })
+  }
+
 })();
