@@ -41,6 +41,7 @@ const Circles: React.FunctionComponent = () => {
 /**
  * https://wattenberger.com/blog/react-and-d3
  */
+
 const D3 :React.FunctionComponent = () => (
   <>
     <div>
