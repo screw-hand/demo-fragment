@@ -1,25 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import D3 from '../D3';
 
 const App = (): JSX.Element => {
-  const logoUrl:string = logo
   
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logoUrl} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <D3 />
     </div>
   );
 }
