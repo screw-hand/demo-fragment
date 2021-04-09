@@ -1,8 +1,7 @@
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-const App = ()=> {
+const App = (): JSX.Element => {
   const logoUrl:string = logo
   
   return (
