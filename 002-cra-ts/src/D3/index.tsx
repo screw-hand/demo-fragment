@@ -123,7 +123,41 @@ const Area: React.FunctionComponent = () => {
   )
 }
 
+// 比例尺
+const Scale: React.FunctionComponent = () => { 
+  const width: number = 600
+  const height: number = 600
+  const color: readonly string[] = d3.schemeCategory10
+  const dataset: number[] = d3.range(5)
 
+  // 线性比例尺
+  // const linear = d3.scaleLinear().domain([0, 20]).range([0, 100])
+  // console.log([
+  //   linear(10),
+  //   linear(30)
+  // ])
+  // let color = d3.schemeCategory10
+  // console.log(color)
+
+  return <svg width={width} height={height}>
+    {dataset.map((x,i) => {
+      return <circle key={x} cx={30 + i * 80} cy={100} r={30} fill={color[i]}></circle>
+    })}
+  </svg>
+}
+
+// 坐标轴
+const Axis: React.FunctionComponent = () => {
+  const width: number = 600
+  const height: number = 600
+  
+  // 线性比例尺
+  // const xScale = d3.scaleLinear().domain([0, 10]).range([0, 300])
+  // const axis = d3
+
+
+  return <svg width={width} height={height}></svg>
+}
 
 /**
  * https://wattenberger.com/blog/react-and-d3
@@ -144,6 +178,12 @@ const D3 :React.FunctionComponent = () => (
     </>}
     <div>
       <Area />
+    </div>
+    <div>
+      <Scale />
+    </div>
+    <div>
+      <Axis />
     </div>
   </>
 )
