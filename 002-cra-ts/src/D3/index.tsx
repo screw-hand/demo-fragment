@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { Fragment , useEffect, useRef, useState } from 'react'
 import * as util from './util'
 import * as d3 from 'd3'
 import './style.css'
@@ -107,10 +107,10 @@ const Area: React.FunctionComponent = () => {
             //   d, i, x, y
             // })
             return (
-              <>
+              <Fragment key={d+i}>
                 <ReactElement/>
                 <TextElement/>
-              </>
+              </Fragment>
             )
           })
         }
@@ -147,17 +147,20 @@ const Scale: React.FunctionComponent = () => {
 }
 
 // 坐标轴
-const Axis: React.FunctionComponent = () => {
-  const width: number = 600
-  const height: number = 600
-  
-  // 线性比例尺
-  // const xScale = d3.scaleLinear().domain([0, 10]).range([0, 300])
-  // const axis = d3
+// const Axis: React.FunctionComponent = () => {
+//   const svgRef = useRef(null)
+//   const width: number = 600
+//   const height: number = 600
 
+//   // 线性比例尺
+//   const xScale = d3.scaleLinear().domain([0, 10]).range([0, 300])
+//   const axis = d3.axisBottom(xScale)
+//   const GAxis:React.FunctionComponent = () => <g transform="translate(80, 80)"></g>
 
-  return <svg width={width} height={height}></svg>
-}
+//   return <svg width={width} height={height} ref={svgRef}>
+//     <GAxis/>
+//   </svg>
+// }
 
 /**
  * https://wattenberger.com/blog/react-and-d3
@@ -182,9 +185,9 @@ const D3 :React.FunctionComponent = () => (
     <div>
       <Scale />
     </div>
-    <div>
+    {/* <div>
       <Axis />
-    </div>
+    </div> */}
   </>
 )
 
