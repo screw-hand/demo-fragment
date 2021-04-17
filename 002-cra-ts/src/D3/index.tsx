@@ -89,6 +89,28 @@ const AnimatedCircles: React.FunctionComponent = () => {
 }
  */
 
+
+ // 比例尺
+const Axis: React.FunctionComponent = () => {
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const xScale:d3.ScaleLinear<number, number, never> = d3.scaleLinear()
+      .domain([0, 100])
+      .range([10, 290])
+    
+    const svgElement : d3.Selection<null, unknown, null, undefined>= d3.select(ref.current)
+
+    const axisGenerator = d3.axisBottom(xScale)
+
+     svgElement.append('g').call(axisGenerator)
+  }, [])
+
+  return (
+    <svg ref= {ref} />
+  )
+}
+ 
 const Area: React.FunctionComponent = () => {
   type PaddingType = {
     top: number,
@@ -221,11 +243,12 @@ const D3: React.FunctionComponent = () => (
   <>
     {
       [
-        Svg,
-        Circle,
-        Circles,
-        Area,
-        Scale
+        // Svg,
+        // Circle,
+        // Circles,
+        // Area,
+        // Scale,
+        Axis
       ].map((C, i) => <C key={i} />)
     } 
   </>
