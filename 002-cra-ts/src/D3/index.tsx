@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
 import * as util from './util'
 import * as d3 from 'd3'
 import './style.css'
@@ -89,25 +89,46 @@ const AnimatedCircles: React.FunctionComponent = () => {
 }
  */
 
-
- // 比例尺
 const Axis: React.FunctionComponent = () => {
-  const ref = useRef(null)
-
-  useEffect(() => {
-    const xScale:d3.ScaleLinear<number, number, never> = d3.scaleLinear()
+  const ticks = useMemo(() => {
+    const xScale = d3.scaleLinear()
       .domain([0, 100])
       .range([10, 290])
     
-    const svgElement : d3.Selection<null, unknown, null, undefined>= d3.select(ref.current)
-
-    const axisGenerator = d3.axisBottom(xScale)
-
-     svgElement.append('g').call(axisGenerator)
+    return xScale.ticks()
+      .map(value => ({
+        value,
+        xOffset: xScale(value)
+      }))
   }, [])
-
+  
   return (
-    <svg ref= {ref} />
+    <svg>
+      <path
+        d="M 9.5 0.5 H 290.5"
+      />
+      {ticks.map(({ value, xOffset }) => (
+        <g
+          key={value}
+          transform={`translate(${xOffset}, 0)`}
+        >
+          <line
+            y2="6"
+            stroke="#000"
+          />
+          <text
+            key={value}
+            style={{
+              fontSize: '10px',
+              textAnchor: 'middle',
+              transform: 'translateY(20px)'
+            }}
+          >
+            {value}
+          </text>
+        </g>
+      ))}
+    </svg>
   )
 }
  
@@ -195,7 +216,6 @@ const Area: React.FunctionComponent = () => {
   )
 }
 
-// 比例尺
 const Scale: React.FunctionComponent = () => { 
   const width: number = 600
   const height: number = 600
