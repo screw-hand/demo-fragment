@@ -1,4 +1,4 @@
-import { Fragment , useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import * as util from './util'
 import * as d3 from 'd3'
 import './style.css'
@@ -27,7 +27,7 @@ const Circles: React.FunctionComponent = () => {
     setDataset(newDataset)
   }, 2000)
 
-  return <svg viewBox="0 0 100 50" >
+  return <svg viewBox="0 0 100 50">
     {dataset.map(([x, y], i) => (
       <circle
         cx={x}
@@ -38,6 +38,56 @@ const Circles: React.FunctionComponent = () => {
     ))}
   </svg>
 }
+
+/* TODO AnimatedCircles
+const AnimatedCircles: React.FunctionComponent = () => {
+  const [visibleCircles, setVisibleCircles] = useState(
+    util.generateDataset()
+  )
+
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const svgElement = d3.select(ref.current)
+    svgElement.selectAll("circle")
+      .data(visibleCircles, d => d)
+      .join(
+        enter => (
+          enter.append("circle")
+              .attr("cx", d => d * 15 + 10)
+              .attr("cy", 10)
+              .attr("r", 0)
+              .attr("fill", "cornflowerblue")
+            .call(enter => (
+              enter.transition().duration(1200)
+                .attr("cy", 10)
+                .attr("r", 6)
+                .style("opacity", 1)
+            ))
+        ),
+        update => (
+          update.attr("fill", "lightgrey")
+        ),
+        exit => (
+          exit.attr("fill", "tomato")
+            .call(exit => (
+              exit.transition().duration(1200)
+                .attr("r", 0)
+                .style("opacity", 0)
+                .remove()
+            ))
+        ),
+      )
+  }, [])
+
+  return (
+    <svg
+      viewBox="0 0 100 20"
+      ref={ref}
+    />
+  )
+}
+ */
 
 const Area: React.FunctionComponent = () => {
   type PaddingType = {
@@ -166,28 +216,18 @@ const Scale: React.FunctionComponent = () => {
  * https://wattenberger.com/blog/react-and-d3
  */
 
-const D3 :React.FunctionComponent = () => (
+const D3: React.FunctionComponent = () => (
+
   <>
-    { false && <>
-    <div>
-      <Svg />
-    </div>
-    <div>
-      <Circle />
-    </div>
-    <div className="circles-container">
-      <Circles />
-    </div>
-    </>}
-    <div>
-      <Area />
-    </div>
-    <div>
-      <Scale />
-    </div>
-    {/* <div>
-      <Axis />
-    </div> */}
+    {
+      [
+        Svg,
+        Circle,
+        Circles,
+        Area,
+        Scale
+      ].map((C, i) => <C key={i} />)
+    } 
   </>
 )
 
