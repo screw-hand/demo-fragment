@@ -27,3 +27,5 @@ console.log({
   'fn2(num)': fn2(num),
   'arrowFn(bool)': arrowFn(bool)
 })
+
+export {}
