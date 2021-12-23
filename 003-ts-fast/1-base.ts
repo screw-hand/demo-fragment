@@ -3,7 +3,7 @@
 let n = null
 let udf = undefined
 let num = NaN
-let str = ''  
+let str = ''
 let bool = true
 let obj = {}
 let arr = []
@@ -24,6 +24,6 @@ console.log({
   obj,
   arr,
   'fn(udf)': fn(udf),
-  'fn2(num)': fn(num),
+  'fn2(num)': fn2(num),
   'arrowFn(bool)': arrowFn(bool)
 })
