@@ -17,3 +17,5 @@ let oneToThre: oneToThre = ''
 oneToThre = 1
 oneToThre = 2
 oneToThre = 3
+
+export {}
