@@ -1,0 +1,26 @@
+{
+  // 始终在状态栏显示eslint状态
+  "eslint.alwaysShowStatus": true,
+  // 启用eslint格式化
+  "eslint.format.enable": true,
+  // 编辑器默认格式化方案
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // 指定语言默认格式化方案
+  "[css]": {
+   "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[less]": {
+   "editor.defaultFormatter": "stylelint.vscode-stylelint"
+  },
+  "[javascript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[javascriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[typescript]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  "[typescriptreact]": { "editor.defaultFormatter": "dbaeumer.vscode-eslint" },
+  // eslint格式化修复错误
+  "eslint.codeActionsOnSave.mode": "all",
+  // 保存时自动修复错误， 不建议
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": true
+  //   "source.fixAll.stylelint": true
+  // }
+}
