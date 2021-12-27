@@ -116,3 +116,5 @@ dist
 .pnp.*
 
 .vscode
+
+!/004-code-style/.vscode
