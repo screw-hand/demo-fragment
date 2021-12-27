@@ -1,0 +1,51 @@
+{
+  "name": "004-code-style",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --fix **/*.{js,jsx,ts,tsx}",
+    "lint:check": "eslint **/*.{js,jsx,ts,tsx}",
+    "prettier": "prettier --write **/*.{js,jsx,tsx,ts,css,less,md,json}",
+    "prettier:check": "prettier --check **/*.{js,jsx,tsx,ts,css,less,md,json}",
+    "prettier:configuration": "stylelint-config-prettier-check",
+    "stylelint": "stylelint --fix **/*.{css,less}",
+    "stylelint:check": "stylelint **/*.{css,less}"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js?(x),ts?(x)}": [
+      "eslint --fix",
+      "prettier --parser=typescript --write"
+    ],
+    "*.{css,*.less}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{md,json}": [
+      "prettier --write"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.27.1",
+    "lint-staged": "^10.0.7",
+    "postcss-less": "^4.0.0",
+    "prettier": "^2.5.1",
+    "stylelint": "^14.2.0",
+    "stylelint-config-css-modules": "^2.3.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^24.0.0",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0"
+  }
+}
