@@ -1,4 +1,4 @@
-/* 11-enum.ts */
+/* 0-enum.ts */
 
 enum ABCD {
   A, // 0
@@ -33,3 +33,5 @@ console.log(
   }
 )
 /* { a1: 1, b1: 2, c1: 5, d1: 6 } */
+
+export {}

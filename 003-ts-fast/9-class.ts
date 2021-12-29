@@ -1,19 +1,31 @@
 /* 9-class.ts */
 
-interface MyNode {
-  params: Object
-}
-
 class MyNode {
+  params: Object
+  readonly readOnly: string = 'readOnly'
+
   constructor(params: Object) {
+    this.params = params
+    this.readOnly = ''
+    console.log(this)
+  }
+
+  get getParams(): Object {
+    return this.params
+  }
+
+  set setParams(params: { name: string, index: number })  {
     this.params = params
   }
 
   static staticData: object = { k: 'v' }
 
   public method(key: string, value: any) {
+    // Cannot assign to 'readOnly' because it is a read-only property.ts(2540)
+    // this.readOnly = 'readOnly'
     this.params[key] = value
     console.log(this.params)
+    this.privateMethod(key, value)
   }
 
   private privateMethod(key: string, value: any) {
