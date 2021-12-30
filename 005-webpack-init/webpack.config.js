@@ -11,28 +11,28 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        // use: [
-        //   // 'style-loader',
-        //   // // 'css-loader?minimize'
-        //   // {
-        //   //   loader: 'css-loader',
-        //   //   options: {
-        //   //     minimize: true
-        //   //   }
-        //   // }
-        //   ExtractTextPlugin.extract({
-        //     use: ['css-loader']
-        //   })
-        // ]
-        use: ExtractTextPlugin.extract({
-          use: ['css-loader']
-        })
+        use: [
+          'style-loader',
+          // 'css-loader?minimize'
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          }
+          // ExtractTextPlugin.extract({
+          //   use: ['css-loader']
+          // })
+        ]
+        // use: ExtractTextPlugin.extract({
+        //   use: ['css-loader']
+        // })
       }
     ]
   },
-  plugins: [
-    new ExtractTextPlugin({
-      filename: '[name]_[contenthash:8].css'
-    })
-  ]
+  // plugins: [
+  //   new ExtractTextPlugin({
+  //     filename: '[name]_[contenthash:8].css'
+  //   })
+  // ]
 }
