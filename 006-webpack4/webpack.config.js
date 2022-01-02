@@ -1,8 +1,11 @@
 const path = require('path')
 const htmlPlugin = require('html-webpack-plugin');
 
+const outputPath = path.join(__dirname, 'dist')
+const publicPath = './'
+
 module.exports = {
-  context:  path.join(__dirname, './src'),
+  context: path.join(__dirname, './src'),
   /* entry start */
   // entry: './index.js',
   // entry: [ 'babel-polyfill', './index.js'],
@@ -22,16 +25,96 @@ module.exports = {
   // },
   /* entry end */
   entry: {
-    app: './index.js'
+    app: './app.ts'
   },
   output: {
+    path: outputPath,
     filename: '[name]@[chunkhash].js',
-    path: path.join(__dirname, 'dist'),
-    publicPath: './'
+    publicPath: publicPath
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          // 'css-lodaer',
+          {
+            loader: 'css-loader',
+            options: {
+
+            }
+          }
+        ],
+        exclude: /node_moduels/,
+        include: /src/,
+        // resource: {
+        //   test: /\.css$/,
+        //   exclude: /node_moduels/,
+        // },
+        // issuer: {
+        //   test: /\.js$/,
+        //   include: /src/,
+        // },
+        // enforce: 'pre' / 'post'
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_moduels/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            presets: [[
+              '@babel/preset-env',
+              {
+                modules: false
+              }
+            ]]
+          }
+        }
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader'
+      },
+      // {
+      //   test: /\.(jpe?g|png|gif)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: 'img/[name].[ext]',
+      //         publicPath: './'
+      //       }
+      //     }
+      //   ]
+      // },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 10240,
+              name: 'img/[name].[ext]',
+              publicPath: './'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.vue$/,
+        use: 'vue-loader'
+      }
+    ]
+  },
+  // resolve: {
+  //   extensions: ['.ts', '.tsx', '.js']
+  // },
   mode: 'development',
   devServer: {
-    publicPath: '/dist',
+    publicPath: '/dist/',
   },
   plugins: [
     new htmlPlugin({
