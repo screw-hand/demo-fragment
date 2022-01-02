@@ -1,0 +1,1 @@
+document.write('lib.js is loaded! </br>')
