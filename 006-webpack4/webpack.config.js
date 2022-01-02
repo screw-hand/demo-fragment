@@ -21,9 +21,13 @@ module.exports = {
   //   vendor: ['react', 'react-dom']
   // },
   /* entry end */
-  entry: './index.js',
+  entry: {
+    app: './index.js'
+  },
   output: {
-    filename: 'bundle.js'
+    filename: '[name]@[chunkhash].js',
+    path: path.join(__dirname, 'dist'),
+    publicPath: './'
   },
   mode: 'development',
   devServer: {
