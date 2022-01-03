@@ -46,7 +46,7 @@ module.exports = {
             }
           }
         ],
-        exclude: /node_moduels/,
+        exclude: /node_modules/,
         include: /src/,
         // resource: {
         //   test: /\.css$/,
@@ -60,19 +60,28 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_moduels/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true,
-            presets: [[
-              '@babel/preset-env',
-              {
-                modules: false
-              }
-            ]]
+        exclude: /node_modules/,
+        include: /src/,
+        use: [
+          // {
+          //   loader: 'babel-loader',
+          //   options: {
+          //     cacheDirectory: true,
+          //     presets: [[
+          //       '@babel/preset-env',
+          //       {
+          //         modules: false
+          //       }
+          //     ]]
+          //   }
+          // },
+          {
+            loader: 'force-strict-loader-name',
+            options: {
+              sourceMap: true
+            }
           }
-        }
+        ]
       },
       {
         test: /\.tsx?$/,

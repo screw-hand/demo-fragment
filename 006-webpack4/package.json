@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "serve": "yarn build && serve dist",
+    "serve": "rm -rf dist && yarn build && serve dist -p 5000",
     "dev": "webpack-dev-server --open-page \"dist/index.html\""
   },
   "keywords": [],
@@ -21,6 +21,7 @@
     "eslint": "^4.17.0",
     "eslint-loader": "^1.9.0",
     "file-loader": "^1.1.6",
+    "force-strict-loader-name": "./force-strict-loader-path/",
     "html-webpack-plugin": "3.2.0",
     "serve": "^13.0.2",
     "style-loader": "0.19.0",
