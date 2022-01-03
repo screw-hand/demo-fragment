@@ -122,6 +122,30 @@ module.exports = {
       {
         test: /\.vue$/,
         use: 'vue-loader'
+      },
+      {
+        test: /\.scss/,
+        use: [
+          // 'style-loader',
+          {
+            loader: MiniCssExtractPlugin.loader,
+            // options: {
+            //   publicPath: '../'
+            // }
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            }
+          }
+        ]
       }
     ]
   },

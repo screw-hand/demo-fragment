@@ -10,4 +10,10 @@
 // document.write('my first webpack app. <br />')
 // addContent()
 
-import './mini-css-extract-plugin/page.js'
+// import './mini-css-extract-plugin/page.js'
+
+import './scss/style.scss'
+
+document.write(
+  '<div class="container"><div class="title">My Webpack app.</div></div>'
+);

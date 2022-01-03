@@ -1,0 +1,9 @@
+@import url('./../style/style.css');
+
+$primary-color: maroon;
+
+.container {
+  .title {
+    color: $primary-color;
+  }
+}
