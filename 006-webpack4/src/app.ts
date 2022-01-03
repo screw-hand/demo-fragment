@@ -12,7 +12,14 @@
 
 // import './mini-css-extract-plugin/page.js'
 
-import './scss/style.scss'
+// import './scss/style.scss'
+
+// document.write(
+//   '<div class="container"><div class="title">My Webpack app.</div></div>'
+// );
+
+
+import './less/style.less'
 
 document.write(
   '<div class="container"><div class="title">My Webpack app.</div></div>'

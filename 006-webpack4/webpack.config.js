@@ -146,6 +146,23 @@ module.exports = {
             }
           }
         ]
+      },
+      {
+        test: /\.less/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            // options: {
+            //   publicPath: '../'
+            // }
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'less-loader'
+          }
+        ]
       }
     ]
   },
