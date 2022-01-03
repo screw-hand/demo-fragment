@@ -17,9 +17,9 @@ module.exports = {
   //   lib: './lib.js'
   // },
   // entry: {
-  //   pageA: './pageA.js',
-  //   pageB: './pageB.js', 
-  //   PageC: './pageC.js',
+  //   pageA: './multi-page/pageA.js',
+  //   pageB: './multi-page/pageB.js', 
+  //   PageC: './multi-page/pageC.js',
   //   /* 提取公共模块 (optimization.splitChunks) */
   //   vendor: ['react', 'react-dom']
   // },

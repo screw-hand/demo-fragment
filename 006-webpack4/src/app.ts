@@ -1,9 +1,9 @@
-import addContent from './add-content.js'
-import './script.ts'
-import './style.css'
+import addContent from './js/add-content.js'
+import './ts/script.ts'
+import './style/style.css'
 import avatarImg from './assets/avatar.png'
 
-import './main-vue.js'
+import './vue/main-vue.js'
 
 console.log(avatarImg)
 
