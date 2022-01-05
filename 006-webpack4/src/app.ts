@@ -7,6 +7,7 @@ import styles from './style/css-module.css';
 import './scss/style.scss'
 import './less/style.less'
 import avatarImg from './assets/avatar.png'
+import * as multiPage from './multi-page/index.js'
 
 addContent()
 
@@ -17,3 +18,5 @@ document.write(
 document.write(`<div class="${styles.title}">My Webpack app.</div> </br>`);   
   
 console.log(avatarImg)
+
+console.log(multiPage)
