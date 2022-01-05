@@ -12,4 +12,7 @@ body {
   color: var(--highlightColor);
   background-color: #09c;
   /* background-color: #09c !important; */
+  background-image: url("./../assets/avatar.png");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
