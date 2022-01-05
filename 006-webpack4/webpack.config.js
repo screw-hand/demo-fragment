@@ -31,6 +31,7 @@ module.exports = {
   output: {
     path: outputPath,
     filename: '[name]@[chunkhash].js',
+    chunkFilename: '[name]@[chunkhash].async.js',
     publicPath: publicPath
   },
   module: {
@@ -38,8 +39,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          // 'style-loader',
-          // 'css-lodaer',
           {
             loader: MiniCssExtractPlugin.loader,
             // options: {
@@ -49,6 +48,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              sourceMap: true,
               modules: true,
               localIdentName: '[name]__[local]__[hash:base64:5]',
             },
@@ -159,10 +159,16 @@ module.exports = {
             // }
           },
           {
-            loader: 'css-loader'
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            }
           },
           {
-            loader: 'less-loader'
+            loader: 'less-loader',
+            options: {
+              sourceMap: true,
+            }
           }
         ]
       }
