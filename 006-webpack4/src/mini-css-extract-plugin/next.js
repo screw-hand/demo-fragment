@@ -1,2 +1,3 @@
 import './next.css'
-document.write('next.js </br>')
+
+export default () => document.write('next.js </br>')

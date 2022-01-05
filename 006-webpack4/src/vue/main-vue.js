@@ -7,7 +7,7 @@ container.id = 'vue-root';
 document.body.prepend(container);
 
 
-new Vue({
+export default () => new Vue({
   el: '#vue-root',
   render: h => h(App),
 });
