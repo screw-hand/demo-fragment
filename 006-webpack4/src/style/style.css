@@ -1,9 +1,15 @@
+::placeholder {
+  color: gray;
+}
+/* style.css */
+:root {
+  --highlightColor: hwb(190, 35%, 20%);
+}
+
 body {
-  text-align: center;
-  padding: 100px;
-  color: maroon;
+  display: grid;
+  justify-content: center;
+  color: var(--highlightColor);
   background-color: #09c;
-  background-image: url('./../assets/avatar.png');
-  background-position: 50% 20%;
-  background-repeat: no-repeat;
+  /* background-color: #09c !important; */
 }
