@@ -1,7 +1,11 @@
-import addContent from './add-content.js'
-import './../style/style.css'
+import "./../style/style.css";
 
-export default function () {
-  document.write('my first webpack app. <br />')
-  addContent()
-}
+export default () => {
+  import(/* webpackChunkName: 'add-content' */ "./add-content").then(
+    (addContent) => {
+      console.log(addContent.default());
+    }
+  );
+
+  document.write("my first webpack app. <br />");
+};
