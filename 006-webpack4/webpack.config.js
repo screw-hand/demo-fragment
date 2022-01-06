@@ -7,6 +7,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const Analyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const HappyPack =  require('happypack')
 
 const outputPath = path.join(__dirname, 'dist')
 const publicPath = './'
@@ -85,17 +86,20 @@ module.exports = {
         exclude: /node_modules/,
         include: /src/,
         use: [
+          // {
+          //   loader: 'babel-loader',
+          //   options: {
+          //     cacheDirectory: true,
+          //     presets: [[
+          //       '@babel/preset-env',
+          //       {
+          //         modules: false
+          //       }
+          //     ]]
+          //   }
+          // },
           {
-            loader: 'babel-loader',
-            options: {
-              cacheDirectory: true,
-              presets: [[
-                '@babel/preset-env',
-                {
-                  modules: false
-                }
-              ]]
-            }
+            loader: 'happypack/loader?id=js'
           },
           {
             loader: 'force-strict-loader-name',
@@ -108,6 +112,8 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader'
+        // TODO bug
+        // use: 'happypack/loader?id=ts'
       },
       // {
       //   test: /\.(jpe?g|png|gif)$/,
@@ -197,29 +203,29 @@ module.exports = {
   devServer: {
     publicPath: '/dist/',
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    },
-    minimizer: [
-      new TerserPlugin({
-        test: /\.js(\?.*)?$/i,
-        // exclude: '/node_modules/'
-      }),
-      new UglifyJsPlugin({
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all'
+  //   },
+  //   minimizer: [
+  //     new TerserPlugin({
+  //       test: /\.js(\?.*)?$/i,
+  //       // exclude: '/node_modules/'
+  //     }),
+  //     new UglifyJsPlugin({
         
-      }),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessor: require('cssnano'),
-        cssProcessorOptions: {
-          discardComments: {
-            removeAll: true
-          }
-        },
-        cssPrint: true
-      })
-    ],
-  },
+  //     }),
+  //     new OptimizeCSSAssetsPlugin({
+  //       cssProcessor: require('cssnano'),
+  //       cssProcessorOptions: {
+  //         discardComments: {
+  //           removeAll: true
+  //         }
+  //       },
+  //       cssPrint: true
+  //     })
+  //   ],
+  // },
   plugins: [
     new htmlPlugin({
       title: path.basename(__dirname),
@@ -236,8 +242,34 @@ module.exports = {
         TYPES: JSON.stringify(['foo', 'bar']),
       },
     }),
-    new Analyzer(
-
-    )
+    new Analyzer({
+      openAnalyzer: false
+    }),
+    new HappyPack({
+      id: 'js',
+      loaders: [
+        {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            presets: [[
+              '@babel/preset-env',
+              {
+                modules: false
+              }
+            ]]
+          }
+        }
+      ]
+    }),
+    new HappyPack({
+      id: 'ts',
+      loaders: [
+        {
+          loader: 'ts-loader',
+          options: { }
+        }
+      ]
+    })
   ]
 }
