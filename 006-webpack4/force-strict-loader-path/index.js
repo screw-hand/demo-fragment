@@ -5,12 +5,10 @@ var SourceMapConsumer = require('source-map').SourceMapConsumer;
 module.exports = function (content, sourceMap) {
   var useStrictPrefix = '\'use strict\';\n\n';
   if (this.cacheable) {
-    console.log('cacheable')
     this.cacheable();
   }
   // source-map
   var options = loaderUtils.getOptions(this) || {};
-  console.log('options', options)
   if (options.sourceMap && sourceMap) {
     var currentRequest = loaderUtils.getCurrentRequest(this);
     var node = SourceNode.fromStringWithSourceMap(

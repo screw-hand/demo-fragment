@@ -4025,6 +4025,11 @@ force-strict-loader-name@./force-strict-loader-path/:
   dependencies:
     loader-utils "^1.1.0"
 
+"force-strict-loader-name@file:./force-strict-loader-path":
+  version "1.0.0"
+  dependencies:
+    loader-utils "^1.1.0"
+
 forever-agent@~0.6.1:
   version "0.6.1"
   resolved "https://registry.nlark.com/forever-agent/download/forever-agent-0.6.1.tgz#fbc71f0c41adeb37f96c577ad1ed42d8fdacca91"
@@ -8915,6 +8920,13 @@ specificity@^0.3.1:
   version "0.3.2"
   resolved "https://registry.npmmirror.com/specificity/download/specificity-0.3.2.tgz#99e6511eceef0f8d9b57924937aac2cb13d13c42"
   integrity sha1-meZRHs7vD42bV5JJN6rCyxPRPEI=
+
+speed-measure-webpack-plugin@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.npm.taobao.org/speed-measure-webpack-plugin/download/speed-measure-webpack-plugin-1.2.2.tgz?cache=0&sync_timestamp=1616945321830&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fspeed-measure-webpack-plugin%2Fdownload%2Fspeed-measure-webpack-plugin-1.2.2.tgz#ed6c850985d3a55376b6d26cfb439ac719acf38c"
+  integrity sha1-7WyFCYXTpVN2ttJs+0Oaxxms84w=
+  dependencies:
+    chalk "^2.0.1"
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"

@@ -9,13 +9,15 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const Analyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const HappyPack =  require('happypack')
 const DashboardPlugin = require("webpack-dashboard/plugin");
-
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+ 
+const smp = new SpeedMeasurePlugin();
 const outputPath = path.join(__dirname, 'dist')
 const publicPath = './'
 
 console.log(process.env.NODE_ENV)
 
-module.exports = {
+module.exports = smp.wrap({
   context: path.join(__dirname, './src'),
   /* entry start */
   // entry: './index.js',
@@ -265,19 +267,19 @@ module.exports = {
         }
       ]
     }),
-    new HappyPack({
-      id: 'ts',
-      loaders: [
-        {
-          loader: 'ts-loader',
-          options: { }
-        }
-      ]
-    }),
+    // new HappyPack({
+    //   id: 'ts',
+    //   loaders: [
+    //     {
+    //       loader: 'ts-loader',
+    //       options: { }
+    //     }
+    //   ]
+    // }),
     // new webpack.DllReferencePlugin({
     //   manifest: require(path.join(__dirname, 'dll/manifest.json')),
     // }),
     // new webpack.HashedModuleIdsPlugin()
     new DashboardPlugin()
   ]
-}
+})
