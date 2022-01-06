@@ -37,7 +37,7 @@ module.exports = {
   /* entry end */
   entry: {
     app: './app.ts',
-    // lib: ["react", "react-dom", "react-router", "vue"]
+    vendors: ["react", "react-dom", "react-router","vue"],
   },
   output: {
     path: outputPath,
@@ -49,25 +49,26 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            // options: {
-            //   publicPath: '../'
-            // }
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: true,
-              localIdentName: '[name]__[local]__[hash:base64:5]',
-            },
-          },
-          'postcss-loader'
-        ],
-        exclude: /node_modules/,
-        include: /src/,
+        use: ['style-loader', 'css-loader'],
+        // use: [
+        //   {
+        //     loader: MiniCssExtractPlugin.loader,
+        //     // options: {
+        //     //   publicPath: '../'
+        //     // }
+        //   },
+        //   {
+        //     loader: 'css-loader',
+        //     options: {
+        //       sourceMap: true,
+        //       modules: true,
+        //       localIdentName: '[name]__[local]__[hash:base64:5]',
+        //     },
+        //   },
+        //   'postcss-loader'
+        // ],
+        // exclude: /node_modules/,
+        // include: /src/,
         // resource: {
         //   test: /\.css$/,
         //   exclude: /node_moduels/,
