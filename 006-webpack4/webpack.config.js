@@ -36,7 +36,7 @@ module.exports = {
   /* entry end */
   entry: {
     app: './app.ts',
-    lib: ["react", "react-dom", "react-router", "vue"]
+    // lib: ["react", "react-dom", "react-router", "vue"]
   },
   output: {
     path: outputPath,
@@ -203,29 +203,29 @@ module.exports = {
   devServer: {
     publicPath: '/dist/',
   },
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all'
-  //   },
-  //   minimizer: [
-  //     new TerserPlugin({
-  //       test: /\.js(\?.*)?$/i,
-  //       // exclude: '/node_modules/'
-  //     }),
-  //     new UglifyJsPlugin({
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    },
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+        // exclude: '/node_modules/'
+      }),
+      new UglifyJsPlugin({
         
-  //     }),
-  //     new OptimizeCSSAssetsPlugin({
-  //       cssProcessor: require('cssnano'),
-  //       cssProcessorOptions: {
-  //         discardComments: {
-  //           removeAll: true
-  //         }
-  //       },
-  //       cssPrint: true
-  //     })
-  //   ],
-  // },
+      }),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: {
+          discardComments: {
+            removeAll: true
+          }
+        },
+        cssPrint: true
+      })
+    ],
+  },
   plugins: [
     new htmlPlugin({
       title: path.basename(__dirname),
@@ -242,9 +242,10 @@ module.exports = {
         TYPES: JSON.stringify(['foo', 'bar']),
       },
     }),
-    new Analyzer({
-      openAnalyzer: false
-    }),
+    // Note: This command was run via npm module 'win-node-env'
+    // new Analyzer({
+    //   openAnalyzer: false
+    // }),
     new HappyPack({
       id: 'js',
       loaders: [
@@ -270,6 +271,10 @@ module.exports = {
           options: { }
         }
       ]
-    })
+    }),
+    // new webpack.DllReferencePlugin({
+    //   manifest: require(path.join(__dirname, 'dll/manifest.json')),
+    // }),
+    // new webpack.HashedModuleIdsPlugin()
   ]
 }
