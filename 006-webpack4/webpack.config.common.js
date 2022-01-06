@@ -37,7 +37,7 @@ module.exports = {
   /* entry end */
   entry: {
     app: './app.ts',
-    vendors: ["react", "react-dom", "react-router","vue"],
+    lib: ["react", "react-dom", "react-router","vue"]
   },
   output: {
     path: outputPath,
