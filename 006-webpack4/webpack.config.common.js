@@ -10,6 +10,7 @@ const Analyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const HappyPack =  require('happypack')
 const DashboardPlugin = require("webpack-dashboard/plugin");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const SizePlugin = require('size-plugin')
  
 const smp = new SpeedMeasurePlugin();
 const outputPath = path.join(__dirname, 'dist')
@@ -38,8 +39,8 @@ module.exports = smp.wrap({
   // },
   /* entry end */
   entry: {
-    app: './app.ts',
-    lib: ["react", "react-dom", "react-router","vue"]
+    app: './app.js',
+    // lib: ["react", "react-dom", "react-router","vue"]
   },
   output: {
     path: outputPath,
@@ -280,6 +281,7 @@ module.exports = smp.wrap({
     //   manifest: require(path.join(__dirname, 'dll/manifest.json')),
     // }),
     // new webpack.HashedModuleIdsPlugin()
-    new DashboardPlugin()
+    new DashboardPlugin(),
+    new SizePlugin()
   ]
 })
