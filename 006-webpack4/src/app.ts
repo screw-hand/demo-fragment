@@ -21,4 +21,13 @@ Object.keys(multiPage).forEach(k => {
   multiPage[k]()
 })
 
+document.write('IS_PRODUCTION: ' + IS_PRODUCTION);
+document.write('<br />');
+document.write('ENV_ID: ' + typeof ENV_ID);
+document.write('<br />');
+document.write('CONSTANTS: ' + JSON.stringify(CONSTANTS));
+
+// @ts-ignore
+console.log(process.env.NODE_ENV)
+
 console.log(avatarImg)

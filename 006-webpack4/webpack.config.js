@@ -1,9 +1,12 @@
 const path = require('path')
 const htmlPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require('webpack');
 
 const outputPath = path.join(__dirname, 'dist')
 const publicPath = './'
+
+console.log(process.env.NODE_ENV)
 
 module.exports = {
   context: path.join(__dirname, './src'),
@@ -178,7 +181,7 @@ module.exports = {
   // resolve: {
   //   extensions: ['.ts', '.tsx', '.js']
   // },
-  mode: 'development',
+  mode: process.env.NODE_ENV,
   devServer: {
     publicPath: '/dist/',
   },
@@ -194,6 +197,13 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
+    }),
+    new webpack.DefinePlugin({
+      IS_PRODUCTION: true,
+      ENV_ID: 130912098,
+      CONSTANTS: {
+        TYPES: JSON.stringify(['foo', 'bar']),
+      },
     })
   ]
 }
