@@ -182,6 +182,9 @@ module.exports = {
   //   extensions: ['.ts', '.tsx', '.js']
   // },
   mode: process.env.NODE_ENV,
+  devtool: 'source-map',
+  // devtool: 'cheap-module-source-map', // recommend dev
+  // devtool: 'eval-source-map',
   devServer: {
     publicPath: '/dist/',
   },
