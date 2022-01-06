@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+// const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const outputPath = path.join(__dirname, 'dist')
@@ -221,7 +221,8 @@ module.exports = {
   },
   plugins: [
     new htmlPlugin({
-      title: path.basename(__dirname)
+      title: path.basename(__dirname),
+      template: './template.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
