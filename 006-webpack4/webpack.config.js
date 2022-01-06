@@ -8,6 +8,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const Analyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const HappyPack =  require('happypack')
+const DashboardPlugin = require("webpack-dashboard/plugin");
 
 const outputPath = path.join(__dirname, 'dist')
 const publicPath = './'
@@ -276,5 +277,6 @@ module.exports = {
     //   manifest: require(path.join(__dirname, 'dll/manifest.json')),
     // }),
     // new webpack.HashedModuleIdsPlugin()
+    new DashboardPlugin()
   ]
 }
