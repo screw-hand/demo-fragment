@@ -10,3 +10,7 @@ export default function () {
     ) + ' </br>'
   )
 }
+
+const dieCode = () => {
+  console.log('死代码，没有被任何模块引用')
+}
