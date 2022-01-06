@@ -6,6 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const Analyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const outputPath = path.join(__dirname, 'dist')
 const publicPath = './'
@@ -234,6 +235,9 @@ module.exports = {
       CONSTANTS: {
         TYPES: JSON.stringify(['foo', 'bar']),
       },
-    })
+    }),
+    new Analyzer(
+
+    )
   ]
 }
