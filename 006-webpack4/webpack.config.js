@@ -2,6 +2,10 @@ const path = require('path')
 const htmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
+const TerserPlugin = require('terser-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const outputPath = path.join(__dirname, 'dist')
 const publicPath = './'
@@ -70,24 +74,28 @@ module.exports = {
         //   include: /src/,
         // },
         // enforce: 'pre' / 'post'
+        // use: ExtractTextPlugin.extract({
+        //   fallback: 'style-loader',
+        //   use: 'css-loader',
+        // })
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
         include: /src/,
         use: [
-          // {
-          //   loader: 'babel-loader',
-          //   options: {
-          //     cacheDirectory: true,
-          //     presets: [[
-          //       '@babel/preset-env',
-          //       {
-          //         modules: false
-          //       }
-          //     ]]
-          //   }
-          // },
+          {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true,
+              presets: [[
+                '@babel/preset-env',
+                {
+                  modules: false
+                }
+              ]]
+            }
+          },
           {
             loader: 'force-strict-loader-name',
             options: {
@@ -191,7 +199,25 @@ module.exports = {
   optimization: {
     splitChunks: {
       chunks: 'all'
-    }
+    },
+    minimizer: [
+      new TerserPlugin({
+        test: /\.js(\?.*)?$/i,
+        // exclude: '/node_modules/'
+      }),
+      new UglifyJsPlugin({
+        
+      }),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessor: require('cssnano'),
+        cssProcessorOptions: {
+          discardComments: {
+            removeAll: true
+          }
+        },
+        cssPrint: true
+      })
+    ],
   },
   plugins: [
     new htmlPlugin({
