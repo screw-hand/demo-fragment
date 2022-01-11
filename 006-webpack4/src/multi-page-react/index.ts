@@ -2,8 +2,10 @@ import pageA from './pageA'
 import pageB from './pageB'
 import pageC from './pageC'
 
-export {
+const objFunc: objFunc = {
   pageA,
   pageB,
   pageC
 }
+
+export default objFunc

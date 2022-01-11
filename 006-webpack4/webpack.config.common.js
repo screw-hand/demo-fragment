@@ -207,9 +207,9 @@ module.exports = smp.wrap({
       }
     ]
   },
-  // resolve: {
-  //   extensions: ['.ts', '.tsx', '.js']
-  // },
+  resolve: {
+    extensions: ['.tsx','.ts', '.js', 'json']
+  },
   mode: process.env.NODE_ENV,
   devtool: 'source-map',
   // devtool: 'cheap-module-source-map', // recommend dev
@@ -267,12 +267,6 @@ module.exports = smp.wrap({
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
-            presets: [[
-              '@babel/preset-env',
-              {
-                modules: false
-              }
-            ]]
           }
         }
       ]
