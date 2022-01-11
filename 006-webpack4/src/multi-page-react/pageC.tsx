@@ -1,6 +1,9 @@
+import React from "react";
 import ReactDOM from 'react-dom';
 import HelloMessage from "./HelloMessage";
 import isPagePath from './isPagePath';
+
+console.log('pageC')
 
 const run = () => {
   const div = document.createElement('div')

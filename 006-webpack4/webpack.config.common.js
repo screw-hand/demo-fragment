@@ -20,7 +20,7 @@ const publicPath = './'
 console.log(process.env.NODE_ENV)
 
 module.exports = smp.wrap({
-  // context: path.join(__dirname, './src'),
+  context: path.join(__dirname, './src'),
   /* entry start */
   // entry: './index.js',
   // entry: [ 'babel-polyfill', './index.js'],
@@ -40,10 +40,10 @@ module.exports = smp.wrap({
   // },
   /* entry end */
   entry: {
-    app: './src/app.ts',
-    pageA: './src/multi-page-react/pageA.tsx',
-    pageB: './src/multi-page-react/pageB.tsx', 
-    PageC: './src/multi-page-react/pageC.tsx',
+    app: './app.ts',
+    page: './multi-page-react/index.ts',
+    pageB: './multi-page-react/pageB.tsx', 
+    PageC: './multi-page-react/pageC.tsx',
   },
   output: {
     path: outputPath,
@@ -245,26 +245,37 @@ module.exports = smp.wrap({
   plugins: [
     // new CleanWebpackPlugin(),
     new htmlPlugin({
-      chunks: ['app'],
+      chunks: 'all',
       title: path.basename(__dirname),
-      template: './src/template.html'
+      template: './template.html'
     }),
     new htmlPlugin({
-      chunks: ['pageA'],
+      chunks: ['app'],
       title: path.basename(__dirname),
-      template: './src/template.html',
+      template: './template.html',
+      filename: 'app.html'
+    }),
+    new htmlPlugin({
+      chunks: ['page'],
+      title: path.basename(__dirname),
+      template: './template.html',
+      filename: 'page.html'
+    }),
+    new htmlPlugin({
+      title: path.basename(__dirname),
+      template: './template.html',
       filename: 'pageA.html'
     }),
     new htmlPlugin({
       chunks: ['pageB'],
       title: path.basename(__dirname),
-      template: './src/template.html',
+      template: './template.html',
       filename: 'pageB.html'
     }),
     new htmlPlugin({
-      chunks: ['pageC'],
+      chunks: ['app', 'pageC'],
       title: path.basename(__dirname),
-      template: './src/template.html',
+      template: './template.html',
       filename: 'pageC.html'
     }),
     new MiniCssExtractPlugin({
