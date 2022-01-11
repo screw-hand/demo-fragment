@@ -7,12 +7,12 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 // const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const Analyzer = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-const HappyPack =  require('happypack')
+const HappyPack = require('happypack')
 const DashboardPlugin = require("webpack-dashboard/plugin");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 const SizePlugin = require('size-plugin')
-const { CleanWebpackPlugin} = require('clean-webpack-plugin')
- 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 const smp = new SpeedMeasurePlugin();
 const outputPath = path.join(__dirname, 'dist')
 const publicPath = './'
@@ -117,7 +117,13 @@ module.exports = smp.wrap({
       },
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: {
+          loader: 'ts-loader',
+          options: {
+            // 自动将所有.vue文件转化为.vue.tsx文件
+            appendTsSuffixTo: [/\.vue$/]
+          },
+        },
         exclude: /node_modules/,
         include: /src/,
         // TODO bug
@@ -221,7 +227,7 @@ module.exports = smp.wrap({
         // exclude: '/node_modules/'
       }),
       new UglifyJsPlugin({
-        
+
       }),
       new OptimizeCSSAssetsPlugin({
         cssProcessor: require('cssnano'),
