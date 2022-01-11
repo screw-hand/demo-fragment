@@ -47,8 +47,8 @@ module.exports = smp.wrap({
   },
   output: {
     path: outputPath,
-    filename: '[name]@[chunkhash].js',
-    chunkFilename: '[name]@[chunkhash].async.js',
+    filename: '[name]@[hash].js',
+    chunkFilename: '[name]@[hash].async.js',
     publicPath: publicPath
   },
   module: {
@@ -217,7 +217,12 @@ module.exports = smp.wrap({
   // devtool: 'cheap-module-source-map', // recommend dev
   // devtool: 'eval-source-map',
   devServer: {
+    contentBase: path.join(__dirname, "public"),
+    host: '0.0.0.0',
+    hot: true,
     publicPath: '/dist/',
+    // contentBase: './dist',
+    // hot: true
   },
   optimization: {
     splitChunks: {
@@ -324,5 +329,7 @@ module.exports = smp.wrap({
     // new webpack.HashedModuleIdsPlugin()
     new DashboardPlugin(),
     new SizePlugin(),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 })

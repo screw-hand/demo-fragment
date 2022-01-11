@@ -12,3 +12,4 @@ export default () => new Vue({
   render: h => h(App),
 });
 
+console.log('hot main-vue.js')

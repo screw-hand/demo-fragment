@@ -23,6 +23,9 @@ export default Vue.extend({
         });
       })
     }
+  },
+  mounted() {
+    console.log('_hot app.vue')
   }
 })
 </script>

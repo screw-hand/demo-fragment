@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:size": "bundlesize",
-    "dev": "NODE_ENV=development webpack-dev-server --config ./webpack.config.dev.js",
+    "dev": "NODE_ENV=development webpack-dev-server --config ./webpack.config.dev.js --hot --inline",
     "prod": "NODE_ENV=production webpack-dev-server --config ./webpack.config.prod.js",
     "watch": "webpack --watch",
     "build": "NODE_ENV=production webpack --config ./webpack.config.prod.js",
