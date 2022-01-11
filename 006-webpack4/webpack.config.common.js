@@ -11,6 +11,7 @@ const HappyPack =  require('happypack')
 const DashboardPlugin = require("webpack-dashboard/plugin");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 const SizePlugin = require('size-plugin')
+const { CleanWebpackPlugin} = require('clean-webpack-plugin')
  
 const smp = new SpeedMeasurePlugin();
 const outputPath = path.join(__dirname, 'dist')
@@ -39,7 +40,7 @@ module.exports = smp.wrap({
   // },
   /* entry end */
   entry: {
-    app: './app.js',
+    app: './app.ts',
     // lib: ["react", "react-dom", "react-router","vue"]
   },
   output: {
@@ -116,7 +117,9 @@ module.exports = smp.wrap({
       },
       {
         test: /\.tsx?$/,
-        use: 'ts-loader'
+        use: 'ts-loader',
+        exclude: /node_modules/,
+        include: /src/,
         // TODO bug
         // use: 'happypack/loader?id=ts'
       },
@@ -282,6 +285,7 @@ module.exports = smp.wrap({
     // }),
     // new webpack.HashedModuleIdsPlugin()
     new DashboardPlugin(),
-    new SizePlugin()
+    new SizePlugin(),
+    new CleanWebpackPlugin()
   ]
 })
