@@ -11,7 +11,7 @@ const HappyPack = require('happypack')
 const DashboardPlugin = require("webpack-dashboard/plugin");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 const SizePlugin = require('size-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const smp = new SpeedMeasurePlugin();
 const outputPath = path.join(__dirname, 'dist')
@@ -20,7 +20,7 @@ const publicPath = './'
 console.log(process.env.NODE_ENV)
 
 module.exports = smp.wrap({
-  context: path.join(__dirname, './src'),
+  // context: path.join(__dirname, './src'),
   /* entry start */
   // entry: './index.js',
   // entry: [ 'babel-polyfill', './index.js'],
@@ -32,16 +32,18 @@ module.exports = smp.wrap({
   //   lib: './lib.js'
   // },
   // entry: {
-  //   pageA: './multi-page/pageA.js',
-  //   pageB: './multi-page/pageB.js', 
-  //   PageC: './multi-page/pageC.js',
+  //   pageA: './multi-page-react/pageA.js',
+  //   pageB: './multi-page-react/pageB.js', 
+  //   PageC: './multi-page-react/pageC.js',
   //   /* 提取公共模块 (optimization.splitChunks) */
   //   vendor: ['react', 'react-dom']
   // },
   /* entry end */
   entry: {
-    app: './app.ts',
-    // lib: ["react", "react-dom", "react-router","vue"]
+    app: './src/app.ts',
+    pageA: './src/multi-page-react/pageA.tsx',
+    pageB: './src/multi-page-react/pageB.tsx', 
+    PageC: './src/multi-page-react/pageC.tsx',
   },
   output: {
     path: outputPath,
@@ -241,9 +243,29 @@ module.exports = smp.wrap({
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new htmlPlugin({
+      chunks: ['app'],
       title: path.basename(__dirname),
-      template: './template.html'
+      template: './src/template.html'
+    }),
+    new htmlPlugin({
+      chunks: ['pageA'],
+      title: path.basename(__dirname),
+      template: './src/template.html',
+      filename: 'pageA.html'
+    }),
+    new htmlPlugin({
+      chunks: ['pageB'],
+      title: path.basename(__dirname),
+      template: './src/template.html',
+      filename: 'pageB.html'
+    }),
+    new htmlPlugin({
+      chunks: ['pageC'],
+      title: path.basename(__dirname),
+      template: './src/template.html',
+      filename: 'pageC.html'
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
@@ -286,6 +308,5 @@ module.exports = smp.wrap({
     // new webpack.HashedModuleIdsPlugin()
     new DashboardPlugin(),
     new SizePlugin(),
-    new CleanWebpackPlugin()
   ]
 })

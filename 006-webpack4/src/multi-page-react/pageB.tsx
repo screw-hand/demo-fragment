@@ -1,8 +1,8 @@
-import React from "react";
 import ReactDOM from "react-dom";
 import HelloMessage from "./HelloMessage";
+import isPagePath from "./isPagePath";
 
-export default () => {
+const run = () => {
   const div = document.createElement("div");
   div.id = "pageB";
   document.body.appendChild(div);
@@ -12,3 +12,7 @@ export default () => {
     document.getElementById("pageB")
   );
 };
+
+isPagePath(run)
+
+export default run 

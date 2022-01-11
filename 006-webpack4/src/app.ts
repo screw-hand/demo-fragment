@@ -16,6 +16,9 @@ miniCssExtractPluginPage()
 
 document.write(`<div class="${styles.title}">My Webpack app.</div> </br>`);   
 
+console.log(
+multiPage
+)
 Object.keys(multiPage).forEach(k => {
   multiPage[k]()
 })
