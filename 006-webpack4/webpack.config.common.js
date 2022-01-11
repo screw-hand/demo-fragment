@@ -243,7 +243,7 @@ module.exports = smp.wrap({
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new htmlPlugin({
       chunks: ['app'],
       title: path.basename(__dirname),
@@ -302,8 +302,13 @@ module.exports = smp.wrap({
     //     }
     //   ]
     // }),
+    // webpack.vendor.config.js
     // new webpack.DllReferencePlugin({
     //   manifest: require(path.join(__dirname, 'dll/manifest.json')),
+    // }),
+    // webpack.dll.config.js
+    // new webpack.DllReferencePlugin({
+    //   manifest: path.resolve(__dirname, 'dist', 'manifest.json')
     // }),
     // new webpack.HashedModuleIdsPlugin()
     new DashboardPlugin(),

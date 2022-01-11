@@ -14,7 +14,10 @@
     "serve": "serve dist -p 5000",
     "dashboard": "webpack-dashboard",
     "dashboard:dev": "yarn dashboard -- NODE_ENV=development -- webpack-dev-server  --config ./webpack.config.dev.js",
-    "ddl": "webpack --config ./webpack.vendor.config.js"
+    "vendor": "webpack --config ./webpack.vendor.config.js",
+    "dll": "webpack --config ./webpack.dll.config.js",
+    "clean:cmd": "rmdir dist /s /q",
+    "clean:bash": "rm -rf ./dist*"
   },
   "keywords": [],
   "author": "",
