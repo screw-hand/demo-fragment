@@ -256,39 +256,28 @@ module.exports = smp.wrap({
       title: path.basename(__dirname),
       template: './template.html'
     }),
-    new htmlPlugin({
-      chunks: ['app'],
-      title: path.basename(__dirname),
-      template: './template.html',
-      filename: 'app.html'
-    }),
-    new htmlPlugin({
-      chunks: ['page'],
-      title: path.basename(__dirname),
-      template: './template.html',
-      filename: 'page.html'
-    }),
-    new htmlPlugin({
-      title: path.basename(__dirname),
-      template: './template.html',
-      filename: 'pageA.html'
-    }),
-    new htmlPlugin({
-      chunks: ['pageB'],
-      title: path.basename(__dirname),
-      template: './template.html',
-      filename: 'pageB.html'
-    }),
-    new htmlPlugin({
-      chunks: ['app', 'pageC'],
-      title: path.basename(__dirname),
-      template: './template.html',
-      filename: 'pageC.html'
-    }),
-    new MiniCssExtractPlugin({
-      filename: 'style/[name].css',
-      chunkFilename: 'style/[id].css',
-    }),
+    // new htmlPlugin({
+    //   excludeChunks: ['page', 'pageB', 'pageC'],
+    //   title: path.basename(__dirname),
+    //   template: './app.html',
+    //   filename: 'app.html'
+    // }),
+    // new htmlPlugin({
+    //   chunks: ['page'],
+    //   title: path.basename(__dirname),
+    //   template: './page.html',
+    //   filename: 'page.html'
+    // }),
+    // new htmlPlugin({
+    //   chunks: ['pageB'],
+    //   title: path.basename(__dirname),
+    //   template: './page.html',
+    //   filename: 'pageB.html'
+    // }),
+    // new MiniCssExtractPlugin({
+    //   filename: 'style/[name].css',
+    //   chunkFilename: 'style/[id].css',
+    // }),
     new webpack.DefinePlugin({
       IS_PRODUCTION: true,
       ENV_ID: 130912098,
