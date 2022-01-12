@@ -47,8 +47,8 @@ module.exports = smp.wrap({
   },
   output: {
     path: outputPath,
-    filename: '[name]@[hash].js',
-    chunkFilename: '[name]@[hash].async.js',
+    filename: 'script/[name]@[hash].js',
+    chunkFilename: 'script/[name]@[hash].async.js',
     publicPath: publicPath
   },
   module: {
@@ -150,8 +150,10 @@ module.exports = smp.wrap({
             loader: 'url-loader',
             options: {
               limit: 1024,
-              name: 'img/[name].[ext]',
-              publicPath: './'
+              name: '[name]_[hash].[ext]',
+              outputPath: 'img',
+              // request url path
+              publicPath: '/img'
             }
           }
         ]
@@ -217,12 +219,12 @@ module.exports = smp.wrap({
   // devtool: 'cheap-module-source-map', // recommend dev
   // devtool: 'eval-source-map',
   devServer: {
-    contentBase: path.join(__dirname, "public"),
     host: '0.0.0.0',
     hot: true,
-    publicPath: '/dist/',
-    // contentBase: './dist',
-    // hot: true
+    // url path
+    publicPath: '/',
+    // static path
+    contentBase: path.join(__dirname, "public"),
   },
   optimization: {
     splitChunks: {
@@ -284,8 +286,8 @@ module.exports = smp.wrap({
       filename: 'pageC.html'
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
+      filename: 'style/[name].css',
+      chunkFilename: 'style/[id].css',
     }),
     new webpack.DefinePlugin({
       IS_PRODUCTION: true,
