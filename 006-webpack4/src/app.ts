@@ -7,7 +7,6 @@ import './style/style.css'
 import './scss/style.scss'
 import './less/style.less'
 import avatarImg from './assets/avatar.png'
-import multiPage from './multi-page-react'
 
 jsScript()
 tsScript()
@@ -15,13 +14,6 @@ mainVue()
 miniCssExtractPluginPage()
 
 document.write(`<div class="${styles.title}">My Webpack app.</div> </br>`);   
-
-console.log(
-multiPage
-)
-Object.keys(multiPage).forEach(k => {
-  multiPage[k]()
-})
 
 document.write('IS_PRODUCTION: ' + IS_PRODUCTION);
 document.write('<br />');

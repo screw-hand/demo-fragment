@@ -42,6 +42,7 @@ module.exports = smp.wrap({
   entry: {
     app: './app.ts',
     page: './multi-page-react/index.ts',
+    pageA: './multi-page-react/pageA.tsx', 
     pageB: './multi-page-react/pageB.tsx', 
     PageC: './multi-page-react/pageC.tsx',
   },
@@ -257,7 +258,7 @@ module.exports = smp.wrap({
       template: './template.html'
     }),
     // new htmlPlugin({
-    //   excludeChunks: ['page', 'pageB', 'pageC'],
+    //   excludeChunks: ['app'],
     //   title: path.basename(__dirname),
     //   template: './app.html',
     //   filename: 'app.html'
@@ -269,10 +270,22 @@ module.exports = smp.wrap({
     //   filename: 'page.html'
     // }),
     // new htmlPlugin({
+    //   chunks: ['pageA'],
+    //   title: path.basename(__dirname),
+    //   template: './page.html',
+    //   filename: 'pageA.html'
+    // }),
+    // new htmlPlugin({
     //   chunks: ['pageB'],
     //   title: path.basename(__dirname),
     //   template: './page.html',
     //   filename: 'pageB.html'
+    // }),
+    // new htmlPlugin({
+    //   chunks: ['pageC'],
+    //   title: path.basename(__dirname),
+    //   template: './page.html',
+    //   filename: 'pageC.html'
     // }),
     new MiniCssExtractPlugin({
       filename: 'style/[name]@[hash].css',
