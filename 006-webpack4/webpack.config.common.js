@@ -274,10 +274,10 @@ module.exports = smp.wrap({
     //   template: './page.html',
     //   filename: 'pageB.html'
     // }),
-    // new MiniCssExtractPlugin({
-    //   filename: 'style/[name].css',
-    //   chunkFilename: 'style/[id].css',
-    // }),
+    new MiniCssExtractPlugin({
+      filename: 'style/[name]@[hash].css',
+      chunkFilename: 'style/[id]@[hash].css',
+    }),
     new webpack.DefinePlugin({
       IS_PRODUCTION: true,
       ENV_ID: 130912098,
