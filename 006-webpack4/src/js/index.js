@@ -1,7 +1,7 @@
 import "./../style/style.css";
 
 export default () => {
-  import(/* webpackChunkName: 'add-content' */ "./add-content").then(
+  import(/* webpackChunkName: 'add-content' */ "@/js/add-content").then(
     (addContent) => {
       addContent.default()
     }

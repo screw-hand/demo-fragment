@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default function () {
   // document.write('I\'m using a config file! </br>')
   console.log('I\'m using webpack-dev-server </br>')

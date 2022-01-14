@@ -213,7 +213,10 @@ module.exports = smp.wrap({
     ]
   },
   resolve: {
-    extensions: ['.tsx','.ts', '.js', 'json']
+    extensions: ['.tsx','.ts', '.js', 'json'],
+    alias: {
+      '@': path.join(__dirname, 'src')
+    }
   },
   mode: process.env.NODE_ENV,
   devtool: 'source-map',
