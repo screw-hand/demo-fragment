@@ -4,4 +4,5 @@ const merge = require('webpack-merge')
 
 module.exports = merge.smart(devConfig, {
   mode: 'production',
+  // devtool: 'cheap-module-source-map', // recommend dev
 })

@@ -90,6 +90,13 @@ module.exports = smp.wrap({
         //   use: 'css-loader',
         // })
       },
+      // {
+      //   test: /\.js$/,
+      //   enforce: "pre",
+      //   exclude: /node_modules/,
+      //   include: /src/,
+      //   use: ["source-map-loader"],
+      // },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -99,24 +106,18 @@ module.exports = smp.wrap({
           //   loader: 'babel-loader',
           //   options: {
           //     cacheDirectory: true,
-          //     presets: [[
-          //       '@babel/preset-env',
-          //       {
-          //         modules: false
-          //       }
-          //     ]]
+          //   }
+          // },
+          // {
+          //   loader: 'force-strict-loader-name',
+          //   options: {
+          //     sourceMap: true
           //   }
           // },
           {
             loader: 'happypack/loader?id=js'
           },
-          {
-            loader: 'force-strict-loader-name',
-            options: {
-              sourceMap: true
-            }
-          }
-        ]
+        ],
       },
       {
         test: /\.tsx?$/,
@@ -313,8 +314,14 @@ module.exports = smp.wrap({
           options: {
             cacheDirectory: true,
           }
-        }
-      ]
+        },
+        {
+          loader: 'force-strict-loader-name',
+          options: {
+            sourceMap: true
+          }
+        },
+      ],
     }),
     // new HappyPack({
     //   id: 'ts',
