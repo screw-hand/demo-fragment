@@ -15,7 +15,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const smp = new SpeedMeasurePlugin();
 const outputPath = path.join(__dirname, 'dist')
-const publicPath = './'
+const publicPath = '/'
 
 console.log(process.env.NODE_ENV)
 

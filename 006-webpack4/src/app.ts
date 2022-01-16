@@ -24,5 +24,3 @@ document.write('CONSTANTS: ' + JSON.stringify(CONSTANTS));
 console.log(process.env.NODE_ENV)
 
 console.log(avatarImg)
-
-console.log('_hot app.js')
