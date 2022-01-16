@@ -17,7 +17,8 @@
     "vendor": "webpack --config ./webpack.vendor.config.js",
     "dll": "webpack --config ./webpack.dll.config.js",
     "clean:cmd": "rmdir dist /s /q",
-    "clean:bash": "rm -rf ./dist*"
+    "clean:bash": "rm -rf ./dist*",
+    "pm2:dev": "pm2 start --name webpack --log ./webpack.log npm -- run dev"
   },
   "keywords": [],
   "author": "",
