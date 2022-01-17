@@ -78,7 +78,7 @@ module.exports = smp.wrap({
         // include: /src/,
         // resource: {
         //   test: /\.css$/,
-        //   exclude: /node_moduels/,
+        //   exclude: /node_modules/,
         // },
         // issuer: {
         //   test: /\.js$/,
