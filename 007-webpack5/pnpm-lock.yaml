@@ -1,6 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/node': ^17.0.10
+  '@types/webpack': ^5.28.0
   autoprefixer: ^10.4.2
   html-webpack-plugin: ^5.5.0
   mini-css-extract-plugin: ^2.5.2
@@ -10,6 +12,7 @@ specifiers:
   stylus: ^0.56.0
   stylus-loader: ^6.2.0
   ts-loader: ^9.2.6
+  ts-node: ^10.4.0
   typescript: ^4.5.4
   webpack: ^5.66.0
   webpack-cli: ^4.9.1
@@ -17,6 +20,8 @@ specifiers:
   workbox-webpack-plugin: ^6.4.2
 
 devDependencies:
+  '@types/node': registry.npmmirror.com/@types/node/17.0.10
+  '@types/webpack': registry.npmmirror.com/@types/webpack/5.28.0_webpack-cli@4.9.1
   autoprefixer: registry.npmmirror.com/autoprefixer/10.4.2_postcss@8.4.5
   html-webpack-plugin: registry.npmmirror.com/html-webpack-plugin/5.5.0_webpack@5.66.0
   mini-css-extract-plugin: registry.npmmirror.com/mini-css-extract-plugin/2.5.2_webpack@5.66.0
@@ -26,6 +31,7 @@ devDependencies:
   stylus: registry.npmmirror.com/stylus/0.56.0
   stylus-loader: registry.npmmirror.com/stylus-loader/6.2.0_stylus@0.56.0+webpack@5.66.0
   ts-loader: registry.nlark.com/ts-loader/9.2.6_typescript@4.5.4+webpack@5.66.0
+  ts-node: registry.npmmirror.com/ts-node/10.4.0_82b55006877de54992e74492b614ace9
   typescript: registry.npmmirror.com/typescript/4.5.4
   webpack: registry.npmmirror.com/webpack/5.66.0_webpack-cli@4.9.1
   webpack-cli: registry.npmmirror.com/webpack-cli/4.9.1_ad725fab8cb7e49fac502828bebe26bc
@@ -225,6 +231,30 @@ packages:
       fastq: registry.nlark.com/fastq/1.13.0
     dev: true
 
+  registry.nlark.com/@tsconfig/node10/1.0.8:
+    resolution: {integrity: sha1-weToDW+WT77LM1nEO9SLQPfK2tk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@tsconfig/node10/download/@tsconfig/node10-1.0.8.tgz}
+    name: '@tsconfig/node10'
+    version: 1.0.8
+    dev: true
+
+  registry.nlark.com/@tsconfig/node12/1.0.9:
+    resolution: {integrity: sha1-YsH23uLr2a6tgNw6+laBDljhoEw=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@tsconfig/node12/download/@tsconfig/node12-1.0.9.tgz}
+    name: '@tsconfig/node12'
+    version: 1.0.9
+    dev: true
+
+  registry.nlark.com/@tsconfig/node14/1.0.1:
+    resolution: {integrity: sha1-lfLRZ/+5uNIGiwsjUwL6/U33EfI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@tsconfig/node14/download/@tsconfig/node14-1.0.1.tgz}
+    name: '@tsconfig/node14'
+    version: 1.0.1
+    dev: true
+
+  registry.nlark.com/@tsconfig/node16/1.0.2:
+    resolution: {integrity: sha1-Qjx3h30Fadsg4fyAiFrEEYMUAQ4=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@tsconfig/node16/download/@tsconfig/node16-1.0.2.tgz}
+    name: '@tsconfig/node16'
+    version: 1.0.2
+    dev: true
+
   registry.nlark.com/@webassemblyjs/ast/1.11.1:
     resolution: {integrity: sha1-K/12fq4aaZb0Mv9+jX/HVnnAtqc=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@webassemblyjs/ast/download/@webassemblyjs/ast-1.11.1.tgz}
     name: '@webassemblyjs/ast'
@@ -381,6 +411,13 @@ packages:
     dependencies:
       mime-types: registry.npmmirror.com/mime-types/2.1.34
       negotiator: registry.nlark.com/negotiator/0.6.2
+    dev: true
+
+  registry.nlark.com/acorn-walk/8.2.0:
+    resolution: {integrity: sha1-dBIQ8uJCZFRQiFOi9E0KuDt/acE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/acorn-walk/download/acorn-walk-8.2.0.tgz}
+    name: acorn-walk
+    version: 8.2.0
+    engines: {node: '>=0.4.0'}
     dev: true
 
   registry.nlark.com/aggregate-error/3.1.0:
@@ -675,6 +712,12 @@ packages:
       yaml: registry.npmmirror.com/yaml/1.10.2
     dev: true
 
+  registry.nlark.com/create-require/1.1.1:
+    resolution: {integrity: sha1-wdfo8eX2z8n/ZfnNNS03NIdWwzM=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/create-require/download/create-require-1.1.1.tgz}
+    name: create-require
+    version: 1.1.1
+    dev: true
+
   registry.nlark.com/cross-spawn/7.0.3:
     resolution: {integrity: sha1-9zqFudXUHQRVUcF34ogtSshXKKY=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/cross-spawn/download/cross-spawn-7.0.3.tgz}
     name: cross-spawn
@@ -742,6 +785,13 @@ packages:
     resolution: {integrity: sha1-yccHdaScPQO8LAbZpzvlUPl4+LE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/detect-node/download/detect-node-2.1.0.tgz}
     name: detect-node
     version: 2.1.0
+    dev: true
+
+  registry.nlark.com/diff/4.0.2:
+    resolution: {integrity: sha1-YPOuy4nV+uUgwRqhnvwruYKq3n0=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/diff/download/diff-4.0.2.tgz}
+    name: diff
+    version: 4.0.2
+    engines: {node: '>=0.3.1'}
     dev: true
 
   registry.nlark.com/dir-glob/3.0.1:
@@ -1540,6 +1590,12 @@ packages:
     version: 0.25.7
     dependencies:
       sourcemap-codec: registry.nlark.com/sourcemap-codec/1.4.8
+    dev: true
+
+  registry.nlark.com/make-error/1.3.6:
+    resolution: {integrity: sha1-LrLjfqm2fEiR9oShOUeZr0hM96I=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/make-error/download/make-error-1.3.6.tgz}
+    name: make-error
+    version: 1.3.6
     dev: true
 
   registry.nlark.com/media-typer/0.3.0:
@@ -2505,6 +2561,13 @@ packages:
     resolution: {integrity: sha1-m7knkNnA7/7GO+c1GeEaNQGaOnI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/yallist/download/yallist-4.0.0.tgz}
     name: yallist
     version: 4.0.0
+    dev: true
+
+  registry.nlark.com/yn/3.1.1:
+    resolution: {integrity: sha1-HodAGgnXZ8HV6rJqbkwYUYLS61A=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/yn/download/yn-3.1.1.tgz}
+    name: yn
+    version: 3.1.1
+    engines: {node: '>=6'}
     dev: true
 
   registry.npmmirror.com/@apideck/better-ajv-errors/0.3.2_ajv@8.9.0:
@@ -3745,6 +3808,22 @@ packages:
       to-fast-properties: registry.nlark.com/to-fast-properties/2.0.0
     dev: true
 
+  registry.npmmirror.com/@cspotcode/source-map-consumer/0.8.0:
+    resolution: {integrity: sha1-M79LeznBeIIWBvZpu8RHpqYpeGs=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@cspotcode/source-map-consumer/download/@cspotcode/source-map-consumer-0.8.0.tgz}
+    name: '@cspotcode/source-map-consumer'
+    version: 0.8.0
+    engines: {node: '>= 12'}
+    dev: true
+
+  registry.npmmirror.com/@cspotcode/source-map-support/0.7.0:
+    resolution: {integrity: sha1-R4mECqhZ5G0vMXNyercHxmvzRPU=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@cspotcode/source-map-support/download/@cspotcode/source-map-support-0.7.0.tgz}
+    name: '@cspotcode/source-map-support'
+    version: 0.7.0
+    engines: {node: '>=12'}
+    dependencies:
+      '@cspotcode/source-map-consumer': registry.npmmirror.com/@cspotcode/source-map-consumer/0.8.0
+    dev: true
+
   registry.npmmirror.com/@discoveryjs/json-ext/0.5.6:
     resolution: {integrity: sha512-ws57AidsDvREKrZKYffXddNkyaF14iHNHm8VQnZH6t99E8gczjNN0GpvcGny0imC80yQ0tHz1xVUKk/KFQSUyA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@discoveryjs/json-ext/download/@discoveryjs/json-ext-0.5.6.tgz}
     name: '@discoveryjs/json-ext'
@@ -4016,6 +4095,22 @@ packages:
     version: 2.0.2
     dev: true
 
+  registry.npmmirror.com/@types/webpack/5.28.0_webpack-cli@4.9.1:
+    resolution: {integrity: sha1-eN3gYhLwONd+VBFs/mnoiuntLAM=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/webpack/download/@types/webpack-5.28.0.tgz}
+    id: registry.npmmirror.com/@types/webpack/5.28.0
+    name: '@types/webpack'
+    version: 5.28.0
+    dependencies:
+      '@types/node': registry.npmmirror.com/@types/node/17.0.10
+      tapable: registry.npmmirror.com/tapable/2.2.1
+      webpack: registry.npmmirror.com/webpack/5.66.0_webpack-cli@4.9.1
+    transitivePeerDependencies:
+      - '@swc/core'
+      - esbuild
+      - uglify-js
+      - webpack-cli
+    dev: true
+
   registry.npmmirror.com/@types/ws/8.2.2:
     resolution: {integrity: sha512-NOn5eIcgWLOo6qW8AcuLZ7G8PycXu0xTxxkS6Q18VWFxgPUSOwV0pBj2a/4viNZVu25i7RIB7GttdkAIUUXOOg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/ws/download/@types/ws-8.2.2.tgz}
     name: '@types/ws'
@@ -4156,6 +4251,12 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       color-convert: registry.npmmirror.com/color-convert/2.0.1
+    dev: true
+
+  registry.npmmirror.com/arg/4.1.3:
+    resolution: {integrity: sha512-58S9QDqG0Xx27YwPSt9fJxivjYl432YCwfDMfZ+71RAqUrZef7LrKQZ3LHLOwCS4FLNBplP533Zx895SeOCHvA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/arg/download/arg-4.1.3.tgz}
+    name: arg
+    version: 4.1.3
     dev: true
 
   registry.npmmirror.com/async/0.9.2:
@@ -5749,6 +5850,39 @@ packages:
     version: 1.0.1
     dependencies:
       punycode: registry.nlark.com/punycode/2.1.1
+    dev: true
+
+  registry.npmmirror.com/ts-node/10.4.0_82b55006877de54992e74492b614ace9:
+    resolution: {integrity: sha512-g0FlPvvCXSIO1JDF6S232P5jPYqBkRL9qly81ZgAOSU7rwI0stphCgd2kLiCrU9DjQCrJMWEqcNSjQL02s6d8A==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ts-node/download/ts-node-10.4.0.tgz}
+    id: registry.npmmirror.com/ts-node/10.4.0
+    name: ts-node
+    version: 10.4.0
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.2.50'
+      '@swc/wasm': '>=1.2.50'
+      '@types/node': '*'
+      typescript: '>=2.7'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+    dependencies:
+      '@cspotcode/source-map-support': registry.npmmirror.com/@cspotcode/source-map-support/0.7.0
+      '@tsconfig/node10': registry.nlark.com/@tsconfig/node10/1.0.8
+      '@tsconfig/node12': registry.nlark.com/@tsconfig/node12/1.0.9
+      '@tsconfig/node14': registry.nlark.com/@tsconfig/node14/1.0.1
+      '@tsconfig/node16': registry.nlark.com/@tsconfig/node16/1.0.2
+      '@types/node': registry.npmmirror.com/@types/node/17.0.10
+      acorn: registry.npmmirror.com/acorn/8.7.0
+      acorn-walk: registry.nlark.com/acorn-walk/8.2.0
+      arg: registry.npmmirror.com/arg/4.1.3
+      create-require: registry.nlark.com/create-require/1.1.1
+      diff: registry.nlark.com/diff/4.0.2
+      make-error: registry.nlark.com/make-error/1.3.6
+      typescript: registry.npmmirror.com/typescript/4.5.4
+      yn: registry.nlark.com/yn/3.1.1
     dev: true
 
   registry.npmmirror.com/tslib/2.3.1:

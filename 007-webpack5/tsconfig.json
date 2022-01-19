@@ -6,5 +6,10 @@
     "target": "es5",
     "allowJs": true
   },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "files": ["src/index.ts"]
 }

@@ -1,5 +1,8 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
+import * as webpack from 'webpack'
+import * as webpackDevServer from 'webpack-dev-server'
+
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -7,7 +10,7 @@ const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
-const config = {
+const config: webpack.Configuration   = {
   entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -15,7 +18,7 @@ const config = {
   devServer: {
     open: true,
     host: "localhost",
-  },
+  } as webpackDevServer.Configuration,
   plugins: [
     new HtmlWebpackPlugin({
       template: "index.html",
