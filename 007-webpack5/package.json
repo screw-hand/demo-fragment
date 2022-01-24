@@ -1,23 +1,32 @@
 {
   "version": "1.0.0",
   "description": "My webpack project",
-  "name": "my-webpack-project",
+  "name": "007-webpack5",
+  "main": "src/main_client.tsx",
   "scripts": {
-    "build": "webpack --mode=production --node-env=production",
-    "build:dev": "webpack --mode=development",
-    "build:prod": "webpack --mode=production --node-env=production",
-    "watch": "webpack --watch",
-    "serve": "webpack serve"
+    "build:client": "webpack --config webpack.config.client.ts --mode=production --node-env=production",
+    "watch:client": "webpack --config webpack.config.client.ts --watch",
+    "serve:client": "webpack --config webpack.config.client.ts serve",
+    "build:server": "webpack --config webpack.config.server.ts --mode=production --node-env=production",
+    "watch:server": "webpack --config webpack.config.server.ts --watch",
+    "serve:server": "webpack --config webpack.config.server.ts serve"
   },
   "devDependencies": {
     "@types/node": "^17.0.10",
+    "@types/react": "^17.0.38",
+    "@types/react-dom": "^17.0.11",
     "@types/webpack": "^5.28.0",
     "autoprefixer": "^10.4.2",
+    "css-loader": "^6.5.1",
+    "express": "^4.17.2",
     "html-webpack-plugin": "^5.5.0",
+    "ignore-loader": "^0.1.2",
     "mini-css-extract-plugin": "^2.5.2",
     "postcss": "^8.4.5",
     "postcss-loader": "^6.2.1",
     "prettier": "^2.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "stylus": "^0.56.0",
     "stylus-loader": "^6.2.0",
     "ts-loader": "^9.2.6",
@@ -26,6 +35,8 @@
     "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.7.3",
+    "webpack-merge": "^5.8.0",
+    "webpack-node-externals": "^3.0.0",
     "workbox-webpack-plugin": "^6.4.2"
   }
 }

@@ -4,12 +4,16 @@
     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
-    "allowJs": true
+    "allowJs": true,
+    "jsx": "react-jsx"
   },
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "files": ["src/index.ts"]
+  "include": [
+    "./types.d.ts",
+    "src/**/*",
+  ]
 }
