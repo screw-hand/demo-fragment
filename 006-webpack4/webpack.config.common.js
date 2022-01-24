@@ -227,7 +227,7 @@ module.exports = smp.wrap({
     host: '0.0.0.0',
     hot: true,
     // url path
-    publicPath: '/',
+    publicPath: publicPath,
     // static path
     contentBase: path.join(__dirname, "public"),
   },
