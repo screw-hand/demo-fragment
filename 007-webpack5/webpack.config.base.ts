@@ -4,7 +4,6 @@ import { Configuration } from "webpack";
 // in case you run into any typescript error when configuring `devServer`
 import 'webpack-dev-server';
 
-const webpack = require('webpack')
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -24,7 +23,7 @@ const config: Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "client.html",
+      template: "index.html",
     }),
 
     new MiniCssExtractPlugin({
@@ -76,7 +75,7 @@ const config: Configuration = {
   },
 };
 
-module.exports = () => {
+const configFn = () => {
   if (isProduction) {
     config.mode = "production";
 
@@ -86,3 +85,5 @@ module.exports = () => {
   }
   return config;
 };
+
+module.exports = configFn()
