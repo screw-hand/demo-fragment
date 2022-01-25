@@ -44,12 +44,11 @@ module.exports = smp.wrap({
     page: './multi-page-react/index.ts',
     pageA: './multi-page-react/pageA.tsx', 
     pageB: './multi-page-react/pageB.tsx', 
-    PageC: './multi-page-react/pageC.tsx',
   },
   output: {
     path: outputPath,
-    filename: 'script/[name]@[hash].js',
-    chunkFilename: 'script/[name]@[hash].async.js',
+    filename: 'script/[name]_[hash].js',
+    chunkFilename: 'script/[name]_[hash].async.js',
     publicPath: publicPath
   },
   module: {
@@ -261,39 +260,33 @@ module.exports = smp.wrap({
       title: path.basename(__dirname),
       template: './template.html'
     }),
-    // new htmlPlugin({
-    //   excludeChunks: ['app'],
-    //   title: path.basename(__dirname),
-    //   template: './app.html',
-    //   filename: 'app.html'
-    // }),
-    // new htmlPlugin({
-    //   chunks: ['page'],
-    //   title: path.basename(__dirname),
-    //   template: './page.html',
-    //   filename: 'page.html'
-    // }),
-    // new htmlPlugin({
-    //   chunks: ['pageA'],
-    //   title: path.basename(__dirname),
-    //   template: './page.html',
-    //   filename: 'pageA.html'
-    // }),
-    // new htmlPlugin({
-    //   chunks: ['pageB'],
-    //   title: path.basename(__dirname),
-    //   template: './page.html',
-    //   filename: 'pageB.html'
-    // }),
-    // new htmlPlugin({
-    //   chunks: ['pageC'],
-    //   title: path.basename(__dirname),
-    //   template: './page.html',
-    //   filename: 'pageC.html'
-    // }),
+    new htmlPlugin({
+      chunks: ['app'],
+      title: path.basename(__dirname),
+      template: './template.html',
+      filename: 'app.html'
+    }),
+    new htmlPlugin({
+      chunks: ['page'],
+      title: path.basename(__dirname),
+      template: './page.html',
+      filename: 'page.html'
+    }),
+    new htmlPlugin({
+      chunks: ['pageA'],
+      title: path.basename(__dirname),
+      template: './page.html',
+      filename: 'pageA.html'
+    }),
+    new htmlPlugin({
+      chunks: ['pageB'],
+      title: path.basename(__dirname),
+      template: './page.html',
+      filename: 'pageB.html'
+    }),
     new MiniCssExtractPlugin({
-      filename: 'style/[name]@[hash].css',
-      chunkFilename: 'style/[id]@[hash].css',
+      filename: 'style/[name]_[hash].css',
+      chunkFilename: 'style/[id]_[hash].css',
     }),
     new webpack.DefinePlugin({
       IS_PRODUCTION: true,
