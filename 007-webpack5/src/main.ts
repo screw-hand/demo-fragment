@@ -1,6 +1,10 @@
-const express = require("express");
+// Import the express in typescript file
+import express from 'express';
+
+// Initialize the express engine
+const app: express.Application = express();
+
 const { render } = require("./dist/bundle_server");
-const app = express();
 
 // 调用构建出的 bundle_server.js 中暴露出的渲染函数，再拼接下 HTML 模版，形成完整的 HTML 文件
 app.get("/", function (req, res) {

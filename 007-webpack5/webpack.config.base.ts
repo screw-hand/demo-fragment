@@ -23,7 +23,7 @@ const config: Configuration = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "index.html",
+      template: "src/index.html",
     }),
 
     new MiniCssExtractPlugin({
@@ -73,6 +73,11 @@ const config: Configuration = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
+  optimization: {
+    splitChunks:{
+      chunks: 'all'
+    }
+  }
 };
 
 const configFn = () => {
