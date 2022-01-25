@@ -7,6 +7,7 @@ specifiers:
   '@types/react-dom': ^17.0.11
   '@types/webpack': ^5.28.0
   autoprefixer: ^10.4.2
+  clean-webpack-plugin: ^4.0.0
   css-loader: ^6.5.1
   express: ^4.17.2
   html-webpack-plugin: ^5.5.0
@@ -27,6 +28,7 @@ specifiers:
   webpack-dev-server: ^4.7.3
   webpack-merge: ^5.8.0
   webpack-node-externals: ^3.0.0
+  webpackbar: ^5.0.2
   workbox-webpack-plugin: ^6.4.2
 
 devDependencies:
@@ -36,6 +38,7 @@ devDependencies:
   '@types/react-dom': registry.npmmirror.com/@types/react-dom/17.0.11
   '@types/webpack': registry.npmmirror.com/@types/webpack/5.28.0_webpack-cli@4.9.2
   autoprefixer: registry.npmmirror.com/autoprefixer/10.4.2_postcss@8.4.5
+  clean-webpack-plugin: registry.npmmirror.com/clean-webpack-plugin/4.0.0_webpack@5.66.0
   css-loader: registry.npmmirror.com/css-loader/6.5.1_webpack@5.66.0
   express: registry.npmmirror.com/express/4.17.2
   html-webpack-plugin: registry.npmmirror.com/html-webpack-plugin/5.5.0_webpack@5.66.0
@@ -56,6 +59,7 @@ devDependencies:
   webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.7.3_webpack-cli@4.9.2+webpack@5.66.0
   webpack-merge: registry.nlark.com/webpack-merge/5.8.0
   webpack-node-externals: registry.npmmirror.com/webpack-node-externals/3.0.0
+  webpackbar: registry.npmmirror.com/webpackbar/5.0.2_webpack@5.66.0
   workbox-webpack-plugin: registry.npmmirror.com/workbox-webpack-plugin/6.4.2_webpack@5.66.0
 
 packages:
@@ -494,11 +498,27 @@ packages:
     version: 2.1.2
     dev: true
 
+  registry.nlark.com/array-union/1.0.2:
+    resolution: {integrity: sha1-mjRBDk9OPaI96jdb5b5w8kd47Dk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/array-union/download/array-union-1.0.2.tgz}
+    name: array-union
+    version: 1.0.2
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      array-uniq: registry.nlark.com/array-uniq/1.0.3
+    dev: true
+
   registry.nlark.com/array-union/2.1.0:
     resolution: {integrity: sha1-t5hCCtvrHego2ErNii4j0+/oXo0=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/array-union/download/array-union-2.1.0.tgz}
     name: array-union
     version: 2.1.0
     engines: {node: '>=8'}
+    dev: true
+
+  registry.nlark.com/array-uniq/1.0.3:
+    resolution: {integrity: sha1-r2rId6Jcx/dOBYiUdThY39sk/bY=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/array-uniq/download/array-uniq-1.0.3.tgz}
+    name: array-uniq
+    version: 1.0.3
+    engines: {node: '>=0.10.0'}
     dev: true
 
   registry.nlark.com/at-least-node/1.0.0:
@@ -690,6 +710,12 @@ packages:
     name: connect-history-api-fallback
     version: 1.6.0
     engines: {node: '>=0.8'}
+    dev: true
+
+  registry.nlark.com/consola/2.15.3:
+    resolution: {integrity: sha1-LhH5jWpL5x/3LgvfB70j4Sy2FVA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/consola/download/consola-2.15.3.tgz}
+    name: consola
+    version: 2.15.3
     dev: true
 
   registry.nlark.com/cookie-signature/1.0.6:
@@ -1409,6 +1435,24 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  registry.nlark.com/is-path-in-cwd/2.1.0:
+    resolution: {integrity: sha1-v+Lcomxp85cmWkAJljYCk1oFOss=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/is-path-in-cwd/download/is-path-in-cwd-2.1.0.tgz}
+    name: is-path-in-cwd
+    version: 2.1.0
+    engines: {node: '>=6'}
+    dependencies:
+      is-path-inside: registry.nlark.com/is-path-inside/2.1.0
+    dev: true
+
+  registry.nlark.com/is-path-inside/2.1.0:
+    resolution: {integrity: sha1-fJgQWH1lmkDSe8201WFuqwWUlLI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/is-path-inside/download/is-path-inside-2.1.0.tgz}
+    name: is-path-inside
+    version: 2.1.0
+    engines: {node: '>=6'}
+    dependencies:
+      path-is-inside: registry.nlark.com/path-is-inside/1.0.2
+    dev: true
+
   registry.nlark.com/is-path-inside/3.0.3:
     resolution: {integrity: sha1-0jE2LlOgf/Kw4Op/7QSRYf/RYoM=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/is-path-inside/download/is-path-inside-3.0.3.tgz}
     name: is-path-inside
@@ -1864,6 +1908,12 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  registry.nlark.com/path-is-inside/1.0.2:
+    resolution: {integrity: sha1-NlQX3t5EQw0cEa9hAn+s8HS9/FM=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/path-is-inside/download/path-is-inside-1.0.2.tgz}
+    name: path-is-inside
+    version: 1.0.2
+    dev: true
+
   registry.nlark.com/path-parse/1.0.7:
     resolution: {integrity: sha1-+8EUtgykKzDZ2vWFjkvWi77bZzU=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/path-parse/download/path-parse-1.0.7.tgz}
     name: path-parse
@@ -1875,6 +1925,22 @@ packages:
     name: path-type
     version: 4.0.0
     engines: {node: '>=8'}
+    dev: true
+
+  registry.nlark.com/pinkie-promise/2.0.1:
+    resolution: {integrity: sha1-ITXW36ejWMBprJsXh3YogihFD/o=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/pinkie-promise/download/pinkie-promise-2.0.1.tgz}
+    name: pinkie-promise
+    version: 2.0.1
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      pinkie: registry.nlark.com/pinkie/2.0.4
+    dev: true
+
+  registry.nlark.com/pinkie/2.0.4:
+    resolution: {integrity: sha1-clVrgM+g1IqXToDnckjoDtT3+HA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/pinkie/download/pinkie-2.0.4.tgz}
+    name: pinkie
+    version: 2.0.4
+    engines: {node: '>=0.10.0'}
     dev: true
 
   registry.nlark.com/portfinder/1.0.28:
@@ -1919,6 +1985,13 @@ packages:
     name: pretty-bytes
     version: 5.6.0
     engines: {node: '>=6'}
+    dev: true
+
+  registry.nlark.com/pretty-time/1.1.0:
+    resolution: {integrity: sha1-/7dCmvq7hTXDRqNOQYc63z103Q4=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/pretty-time/download/pretty-time-1.1.0.tgz}
+    name: pretty-time
+    version: 1.1.0
+    engines: {node: '>=4'}
     dev: true
 
   registry.nlark.com/process-nextick-args/2.0.1:
@@ -4060,6 +4133,15 @@ packages:
       '@types/serve-static': registry.npmmirror.com/@types/serve-static/1.13.10
     dev: true
 
+  registry.npmmirror.com/@types/glob/7.2.0:
+    resolution: {integrity: sha1-vBtb86qS8lvV3TnzXFc2G9zlsus=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/glob/download/@types/glob-7.2.0.tgz}
+    name: '@types/glob'
+    version: 7.2.0
+    dependencies:
+      '@types/minimatch': registry.npmmirror.com/@types/minimatch/3.0.5
+      '@types/node': registry.npmmirror.com/@types/node/17.0.10
+    dev: true
+
   registry.npmmirror.com/@types/html-minifier-terser/6.1.0:
     resolution: {integrity: sha512-oh/6byDPnL1zeNXFrDXFLyZjkr1MsBG667IM792caf1L2UPOOMf65NFzjUH/ltyfwjAGfs1rsX1eftK0jC/KIg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/html-minifier-terser/download/@types/html-minifier-terser-6.1.0.tgz}
     name: '@types/html-minifier-terser'
@@ -4084,6 +4166,12 @@ packages:
     resolution: {integrity: sha1-k+Jb+e51/g/YC1lLxP6w6GIRG1o=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/mime/download/@types/mime-1.3.2.tgz}
     name: '@types/mime'
     version: 1.3.2
+    dev: true
+
+  registry.npmmirror.com/@types/minimatch/3.0.5:
+    resolution: {integrity: sha1-EAHMXmo3BLg8I2An538vWOoBD0A=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/minimatch/download/@types/minimatch-3.0.5.tgz}
+    name: '@types/minimatch'
+    version: 3.0.5
     dev: true
 
   registry.npmmirror.com/@types/node/17.0.10:
@@ -4532,6 +4620,19 @@ packages:
       source-map: registry.nlark.com/source-map/0.6.1
     dev: true
 
+  registry.npmmirror.com/clean-webpack-plugin/4.0.0_webpack@5.66.0:
+    resolution: {integrity: sha512-WuWE1nyTNAyW5T7oNyys2EN0cfP2fdRxhxnIQWiAp0bMabPdHhoGxM8A6YL2GhqwgrPnnaemVE7nv5XJ2Fhh2w==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/clean-webpack-plugin/download/clean-webpack-plugin-4.0.0.tgz}
+    id: registry.npmmirror.com/clean-webpack-plugin/4.0.0
+    name: clean-webpack-plugin
+    version: 4.0.0
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      webpack: '>=4.0.0 <6.0.0'
+    dependencies:
+      del: registry.npmmirror.com/del/4.1.1
+      webpack: registry.npmmirror.com/webpack/5.66.0_webpack-cli@4.9.2
+    dev: true
+
   registry.npmmirror.com/color-convert/1.9.3:
     resolution: {integrity: sha1-u3GFBpDh8TZWfeYp0tVHHe2kweg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/color-convert/download/color-convert-1.9.3.tgz}
     name: color-convert
@@ -4725,6 +4826,21 @@ packages:
     name: define-lazy-prop
     version: 2.0.0
     engines: {node: '>=8'}
+    dev: true
+
+  registry.npmmirror.com/del/4.1.1:
+    resolution: {integrity: sha512-QwGuEUouP2kVwQenAsOof5Fv8K9t3D8Ca8NxcXKrIpEHjTXK5J2nXLdP+ALI1cgv8wj7KuwBhTwBkOZSJKM5XQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/del/download/del-4.1.1.tgz}
+    name: del
+    version: 4.1.1
+    engines: {node: '>=6'}
+    dependencies:
+      '@types/glob': registry.npmmirror.com/@types/glob/7.2.0
+      globby: registry.npmmirror.com/globby/6.1.0
+      is-path-cwd: registry.nlark.com/is-path-cwd/2.2.0
+      is-path-in-cwd: registry.nlark.com/is-path-in-cwd/2.1.0
+      p-map: registry.npmmirror.com/p-map/2.1.0
+      pify: registry.npmmirror.com/pify/4.0.1
+      rimraf: registry.npmmirror.com/rimraf/2.7.1
     dev: true
 
   registry.npmmirror.com/del/6.0.0:
@@ -5023,6 +5139,19 @@ packages:
       ignore: registry.npmmirror.com/ignore/5.2.0
       merge2: registry.nlark.com/merge2/1.4.1
       slash: registry.nlark.com/slash/3.0.0
+    dev: true
+
+  registry.npmmirror.com/globby/6.1.0:
+    resolution: {integrity: sha1-9abXDoOV4hyFj7BInWTfAkJNUGw=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/globby/download/globby-6.1.0.tgz}
+    name: globby
+    version: 6.1.0
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      array-union: registry.nlark.com/array-union/1.0.2
+      glob: registry.npmmirror.com/glob/7.2.0
+      object-assign: registry.nlark.com/object-assign/4.1.1
+      pify: registry.npmmirror.com/pify/2.3.0
+      pinkie-promise: registry.nlark.com/pinkie-promise/2.0.1
     dev: true
 
   registry.npmmirror.com/graceful-fs/4.2.9:
@@ -5432,8 +5561,15 @@ packages:
       is-wsl: registry.nlark.com/is-wsl/2.2.0
     dev: true
 
+  registry.npmmirror.com/p-map/2.1.0:
+    resolution: {integrity: sha1-MQko/u+cnsxltosXaTAYpmXOoXU=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/p-map/download/p-map-2.1.0.tgz}
+    name: p-map
+    version: 2.1.0
+    engines: {node: '>=6'}
+    dev: true
+
   registry.npmmirror.com/p-map/4.0.0:
-    resolution: {integrity: sha1-uy+Vpe2i7BaOySdOBqdHw+KQTSs=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/p-map/download/p-map-4.0.0.tgz?cache=0&sync_timestamp=1635932063287&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fp-map%2Fdownload%2Fp-map-4.0.0.tgz}
+    resolution: {integrity: sha1-uy+Vpe2i7BaOySdOBqdHw+KQTSs=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/p-map/download/p-map-4.0.0.tgz}
     name: p-map
     version: 4.0.0
     engines: {node: '>=10'}
@@ -5503,6 +5639,20 @@ packages:
     name: picomatch
     version: 2.3.1
     engines: {node: '>=8.6'}
+    dev: true
+
+  registry.npmmirror.com/pify/2.3.0:
+    resolution: {integrity: sha1-7RQaasBDqEnqWISY59yosVMw6Qw=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pify/download/pify-2.3.0.tgz}
+    name: pify
+    version: 2.3.0
+    engines: {node: '>=0.10.0'}
+    dev: true
+
+  registry.npmmirror.com/pify/4.0.1:
+    resolution: {integrity: sha1-SyzSXFDVmHNcUCkiJP2MbfQeMjE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/pify/download/pify-4.0.1.tgz}
+    name: pify
+    version: 4.0.1
+    engines: {node: '>=6'}
     dev: true
 
   registry.npmmirror.com/pkg-dir/4.2.0:
@@ -5737,6 +5887,15 @@ packages:
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
     dev: true
 
+  registry.npmmirror.com/rimraf/2.7.1:
+    resolution: {integrity: sha1-NXl/E6f9rcVmFCwp1PB8ytSD4+w=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rimraf/download/rimraf-2.7.1.tgz}
+    name: rimraf
+    version: 2.7.1
+    hasBin: true
+    dependencies:
+      glob: registry.npmmirror.com/glob/7.2.0
+    dev: true
+
   registry.npmmirror.com/rimraf/3.0.2:
     resolution: {integrity: sha1-8aVAK6YiCtUswSgrrBrjqkn9Bho=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/rimraf/download/rimraf-3.0.2.tgz}
     name: rimraf
@@ -5877,6 +6036,12 @@ packages:
     name: source-map-url
     version: 0.4.1
     deprecated: See https://github.com/lydell/source-map-url#deprecated
+    dev: true
+
+  registry.npmmirror.com/std-env/3.0.1:
+    resolution: {integrity: sha1-vEy8DkOGEBl+NMLXnD3zC0kfUYI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/std-env/download/std-env-3.0.1.tgz}
+    name: std-env
+    version: 3.0.1
     dev: true
 
   registry.npmmirror.com/string.prototype.matchall/4.0.6:
@@ -6317,6 +6482,22 @@ packages:
       - '@swc/core'
       - esbuild
       - uglify-js
+    dev: true
+
+  registry.npmmirror.com/webpackbar/5.0.2_webpack@5.66.0:
+    resolution: {integrity: sha512-BmFJo7veBDgQzfWXl/wwYXr/VFus0614qZ8i9znqcl9fnEdiVkdbi0TedLQ6xAK92HZHDJ0QmyQ0fmuZPAgCYQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/webpackbar/download/webpackbar-5.0.2.tgz}
+    id: registry.npmmirror.com/webpackbar/5.0.2
+    name: webpackbar
+    version: 5.0.2
+    engines: {node: '>=12'}
+    peerDependencies:
+      webpack: 3 || 4 || 5
+    dependencies:
+      chalk: registry.npmmirror.com/chalk/4.1.2
+      consola: registry.nlark.com/consola/2.15.3
+      pretty-time: registry.nlark.com/pretty-time/1.1.0
+      std-env: registry.npmmirror.com/std-env/3.0.1
+      webpack: registry.npmmirror.com/webpack/5.66.0_webpack-cli@4.9.2
     dev: true
 
   registry.npmmirror.com/whatwg-url/7.1.0:

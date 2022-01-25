@@ -8,6 +8,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+const WebpackBar = require('webpackbar');
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -30,6 +31,8 @@ const config: Configuration = {
       filename: "[name]@[contenthash].css",
       chunkFilename: "[name]@[contenthash].async.css",
     }),
+
+    new WebpackBar(),
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
@@ -73,11 +76,11 @@ const config: Configuration = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
-  optimization: {
-    splitChunks:{
-      chunks: 'all'
-    }
-  }
+  // optimization: {
+  //   splitChunks:{
+  //     chunks: 'all'
+  //   }
+  // }
 };
 
 const configFn = () => {

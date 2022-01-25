@@ -14,5 +14,6 @@ const watching = compiler.watch(
     // [Stats Object](#stats-object)
     // Print watch/build result here...
     console.error(err);
+    console.error(stats);
   }
 );

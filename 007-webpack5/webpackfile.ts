@@ -3,6 +3,7 @@ import { merge } from "webpack-merge";
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const baseConfig = require('./webpack.config.base')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const config = merge<Configuration>(baseConfig, {
   entry: {
@@ -29,7 +30,8 @@ const config = merge<Configuration>(baseConfig, {
       filename: 'pageB.html',
       chunks: ['pageB']
     }),
-  ]
+    new CleanWebpackPlugin()
+  ],
 });
 
 module.exports = config

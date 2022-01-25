@@ -9,6 +9,7 @@ webpack(
     if (err || stats.hasErrors()) {
       // [Handle errors here](#error-handling)
       console.error(err);
+      console.error(stats)
     }
     // Done processing
     console.log("done!");
