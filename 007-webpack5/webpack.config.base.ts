@@ -19,9 +19,10 @@ const config: Configuration = {
     chunkFilename: "[name]@[contenthash].async.js",
   },
   devServer: {
-    open: true,
+    open: false,
     host: "0.0.0.0",
   },
+  devtool: 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",
@@ -54,6 +55,7 @@ const config: Configuration = {
           {
             loader: "css-loader",
             options: {
+              sourceMap: true,
               modules: {
                 mode: "local",
                 localIdentName: "[path][name]__[local]--[hash:base64:5]",

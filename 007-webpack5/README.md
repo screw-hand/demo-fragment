@@ -90,3 +90,19 @@ devDependencies:
 + workbox-webpack-plugin 6.4.2
 [webpack-cli] Project has been initialised with webpack!
 ```
+
+```bash
+webpack.config.base.ts   # webpack基础配置（被所有其他配置文件继承）
+webpack.config.client.ts # csr配置
+webpack.config.server.ts # ssr配置
+webpackfile.ts           # mpa配置
+
+# 以node方式启动webpack
+npm run start [webpack config file path]
+
+# 以node方式启动监听webpack
+npm run watch [webpack config file path]
+
+# 构建/监听/开发服务 csr/ssr/mpa配置
+npm run [build/watch/serve]:[client/server/mpa]
+```

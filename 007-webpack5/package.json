@@ -6,13 +6,13 @@
   "scripts": {
     "build:client": "webpack --config webpack.config.client.ts --mode=production --node-env=production",
     "watch:client": "webpack --config webpack.config.client.ts --watch",
-    "serve:client": "webpack --config webpack.config.client.ts serve",
+    "serve:client": "webpack serve --config webpack.config.client.ts",
     "build:server": "webpack --config webpack.config.server.ts --mode=production --node-env=production",
     "watch:server": "webpack --config webpack.config.server.ts --watch",
-    "serve:server": "webpack --config webpack.config.server.ts serve",
+    "serve:server": "webpack serve --config webpack.config.server.ts",
     "build:mpa": "webpack --config webpackfile.ts --mode=production --node-env=production",
     "watch:mpa": "webpack --config webpackfile.ts --watch",
-    "serve:mpa": "webpack --config webpackfile.ts serve",
+    "serve:mpa": "webpack serve --config webpackfile.ts",
     "start": "ts-node ./webpack.ts",
     "watch": "ts-node ./webpack.server.ts"
   },
