@@ -76,11 +76,11 @@ const config: Configuration = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
-  // optimization: {
-  //   splitChunks:{
-  //     chunks: 'all'
-  //   }
-  // }
+  optimization: {
+    splitChunks:{
+      chunks: 'all'
+    }
+  }
 };
 
 const configFn = () => {
