@@ -1,19 +1,19 @@
-const webpack = require("webpack");
-const args = process.argv.slice(2);
-const config = require(args[0] || "./webpack.config.base.ts");
+const webpack = require('webpack')
+const args = process.argv.slice(2)
+const config = require(args[0] || './webpack.config.base.ts')
 
-const compiler = webpack(config);
+const compiler = webpack(config)
 
-const watching = compiler.watch(
+compiler.watch(
   {
     // Example [watchOptions](/configuration/watch/#watchoptions)
     aggregateTimeout: 300,
-    poll: undefined,
+    poll: undefined
   },
   (err: unknown, stats: { hasErrors: () => {} }) => {
     // [Stats Object](#stats-object)
     // Print watch/build result here...
-    console.error(err);
-    console.error(stats);
+    console.error(err)
+    console.error(stats)
   }
-);
+)

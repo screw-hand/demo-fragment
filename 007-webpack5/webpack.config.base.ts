@@ -1,26 +1,27 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 
-import { Configuration } from "webpack";
+import { Configuration } from 'webpack'
 // in case you run into any typescript error when configuring `devServer`
-import 'webpack-dev-server';
+import 'webpack-dev-server'
 
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
-const WebpackBar = require('webpackbar');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
+const WebpackBar = require('webpackbar')
+const ESLintPlugin = require('eslint-webpack-plugin')
 
-const isProduction = process.env.NODE_ENV == "production";
+const isProduction = process.env.NODE_ENV === 'production'
 
 const config: Configuration = {
   output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name]@[contenthash].js",
-    chunkFilename: "[name]@[contenthash].async.js",
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name]@[contenthash].js',
+    chunkFilename: '[name]@[contenthash].async.js'
   },
   devServer: {
     open: false,
-    host: "0.0.0.0",
+    host: '0.0.0.0',
     client: {
       overlay: true
     }
@@ -28,15 +29,21 @@ const config: Configuration = {
   devtool: 'source-map',
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: 'src/index.html'
     }),
 
     new MiniCssExtractPlugin({
-      filename: "[name]@[contenthash].css",
-      chunkFilename: "[name]@[contenthash].async.css",
+      filename: '[name]@[contenthash].css',
+      chunkFilename: '[name]@[contenthash].async.css'
     }),
 
     new WebpackBar(),
+
+    new ESLintPlugin({
+      fix: true,
+      extensions: ['js', 'json', 'coffee', 'vue', 'jsx', 'ts', 'tsx'],
+      exclude: ['node_modules']
+    })
 
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
@@ -45,58 +52,58 @@ const config: Configuration = {
     rules: [
       {
         test: /\.(ts|tsx)$/i,
-        loader: "ts-loader",
-        exclude: ["/node_modules/"],
+        loader: 'ts-loader',
+        exclude: ['/node_modules/']
       },
       {
         test: /\.styl$/i,
         use: [
           /* stylesHandler, */
           {
-            loader: MiniCssExtractPlugin.loader,
+            loader: MiniCssExtractPlugin.loader
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               sourceMap: true,
               modules: {
-                mode: "local",
-                localIdentName: "[path][name]__[local]--[hash:base64:5]",
-              },
-            },
+                mode: 'local',
+                localIdentName: '[path][name]__[local]--[hash:base64:5]'
+              }
+            }
           },
-          "postcss-loader",
-          "stylus-loader",
-        ],
+          'postcss-loader',
+          'stylus-loader'
+        ]
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: "asset",
-      },
+        type: 'asset'
+      }
 
       // Add your rules for custom modules here
       // Learn more about loaders from https://webpack.js.org/loaders/
-    ],
+    ]
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: ['.tsx', '.ts', '.js']
   },
   optimization: {
-    splitChunks:{
+    splitChunks: {
       chunks: 'all'
     }
   }
-};
+}
 
 const configFn = () => {
   if (isProduction) {
-    config.mode = "production";
+    config.mode = 'production'
 
-    config.plugins.push(new WorkboxWebpackPlugin.GenerateSW());
+    config.plugins.push(new WorkboxWebpackPlugin.GenerateSW())
   } else {
-    config.mode = "development";
+    config.mode = 'development'
   }
-  return config;
-};
+  return config
+}
 
 module.exports = configFn()

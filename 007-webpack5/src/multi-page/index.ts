@@ -1,9 +1,10 @@
+import { ObjFunc } from '../global'
 import pageA from './pageA'
 import pageB from './pageB'
 
-const objFunc: objFunc = {
+const objFunc: ObjFunc = {
   pageA,
-  pageB,
+  pageB
 }
 
 export default objFunc

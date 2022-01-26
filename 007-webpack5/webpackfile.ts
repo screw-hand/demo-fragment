@@ -1,9 +1,9 @@
-import { Configuration } from "webpack";
-import { merge } from "webpack-merge";
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import { Configuration } from 'webpack'
+import { merge } from 'webpack-merge'
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const baseConfig = require('./webpack.config.base')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const config = merge<Configuration>(baseConfig, {
   entry: {
@@ -12,26 +12,26 @@ const config = merge<Configuration>(baseConfig, {
     pageB: './src/multi-page/pageB.tsx'
   },
   output: {
-    filename: "[name].js"
+    filename: '[name].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: 'src/index.html',
       filename: 'app.html',
       chunks: ['app']
     }),
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: 'src/index.html',
       filename: 'pageA.html',
       chunks: ['pageA']
     }),
     new HtmlWebpackPlugin({
-      template: "src/index.html",
+      template: 'src/index.html',
       filename: 'pageB.html',
       chunks: ['pageB']
     }),
     new CleanWebpackPlugin()
-  ],
-});
+  ]
+})
 
 module.exports = config

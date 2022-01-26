@@ -1,7 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import HelloMessage from "./HelloMessage";
-import isPagePath from "./isPagePath";
+import ReactDOM from 'react-dom'
+import HelloMessage from './HelloMessage'
+import isPagePath from './isPagePath'
 
 console.log('pageA')
 
@@ -18,4 +17,4 @@ const run = () => {
 
 isPagePath(run)
 
-export default run 
+export default run
