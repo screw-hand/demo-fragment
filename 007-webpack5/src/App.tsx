@@ -1,4 +1,5 @@
 import Style from './App.styl'
+import './script'
 
 const cname = Style.root
 
