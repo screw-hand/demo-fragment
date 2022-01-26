@@ -27,6 +27,7 @@ specifiers:
   prettier: ^2.5.1
   react: ^17.0.2
   react-dom: ^17.0.2
+  style-loader: ^3.3.1
   stylus: ^0.56.0
   stylus-loader: ^6.2.0
   ts-loader: ^9.2.6
@@ -67,6 +68,7 @@ devDependencies:
   prettier: registry.npmmirror.com/prettier/2.5.1
   react: registry.npmmirror.com/react/17.0.2
   react-dom: registry.npmmirror.com/react-dom/17.0.2_react@17.0.2
+  style-loader: registry.npmmirror.com/style-loader/3.3.1_webpack@5.67.0
   stylus: registry.npmmirror.com/stylus/0.56.0
   stylus-loader: registry.npmmirror.com/stylus-loader/6.2.0_stylus@0.56.0+webpack@5.67.0
   ts-loader: registry.npmmirror.com/ts-loader/9.2.6_typescript@4.5.5+webpack@5.67.0
@@ -7003,6 +7005,18 @@ packages:
     name: strip-final-newline
     version: 2.0.0
     engines: {node: '>=6'}
+    dev: true
+
+  registry.npmmirror.com/style-loader/3.3.1_webpack@5.67.0:
+    resolution: {integrity: sha512-GPcQ+LDJbrcxHORTRes6Jy2sfvK2kS6hpSfI/fXhPt+spVzxF6LJ1dHLN9zIGmVaaP044YKaIatFaufENRiDoQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/style-loader/download/style-loader-3.3.1.tgz}
+    id: registry.npmmirror.com/style-loader/3.3.1
+    name: style-loader
+    version: 3.3.1
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      webpack: registry.npmmirror.com/webpack/5.67.0_webpack-cli@4.9.2
     dev: true
 
   registry.npmmirror.com/stylus-loader/6.2.0_stylus@0.56.0+webpack@5.67.0:
