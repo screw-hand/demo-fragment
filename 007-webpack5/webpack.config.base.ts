@@ -21,6 +21,9 @@ const config: Configuration = {
   devServer: {
     open: false,
     host: "0.0.0.0",
+    client: {
+      overlay: true
+    }
   },
   devtool: 'source-map',
   plugins: [
