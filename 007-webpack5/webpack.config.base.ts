@@ -39,6 +39,11 @@ const config: Configuration = {
 
     new WebpackBar(),
 
+    // Plugin for hot module replacement
+
+    // @ts-ignore
+    // new webpack.HotModuleReplacementPlugin(),
+
     new ESLintPlugin({
       fix: true,
       extensions: ['js', 'json', 'coffee', 'vue', 'jsx', 'ts', 'tsx'],
