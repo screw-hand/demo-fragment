@@ -1,8 +1,11 @@
 import Style from './App.styl'
 import HelloMessage from './multi-page/HelloMessage'
-import './script'
 
 const cname = Style.root
+
+import(/* webpackChunkName: "chunk_script" */ '../src/script.js').then(() => {
+  console.log('1')
+})
 
 const App = () => {
   return (

@@ -9,6 +9,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 const WebpackBar = require('webpackbar')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const ESLintPlugin = require('eslint-webpack-plugin')
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -105,6 +106,12 @@ const configFn = () => {
     config.mode = 'production'
 
     config.plugins.push(new WorkboxWebpackPlugin.GenerateSW())
+
+    config.plugins.push(
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'json'
+      })
+    )
   } else {
     config.mode = 'development'
   }

@@ -35,6 +35,7 @@ specifiers:
   ts-node: ^10.4.0
   typescript: ^4.5.4
   webpack: ^5.66.0
+  webpack-bundle-analyzer: ^4.5.0
   webpack-cli: ^4.9.2
   webpack-dev-server: ^4.7.3
   webpack-merge: ^5.8.0
@@ -77,7 +78,8 @@ devDependencies:
   ts-node: registry.npmmirror.com/ts-node/10.4.0_a4f631dedb43a025ec8d07f05ba12686
   typescript: registry.npmmirror.com/typescript/4.5.5
   webpack: registry.npmmirror.com/webpack/5.67.0_webpack-cli@4.9.2
-  webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_4df292f2573ba77e77217391b9684f0a
+  webpack-bundle-analyzer: registry.npmmirror.com/webpack-bundle-analyzer/4.5.0
+  webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_ba6f9f301f533745de64d2026d9b5344
   webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.7.3_e9a6b0c876bb47b7070003eedf8fe3a2
   webpack-merge: registry.npmmirror.com/webpack-merge/5.8.0
   webpack-node-externals: registry.nlark.com/webpack-node-externals/3.0.0
@@ -927,6 +929,12 @@ packages:
     dependencies:
       no-case: registry.nlark.com/no-case/3.0.4
       tslib: registry.npmmirror.com/tslib/2.3.1
+    dev: true
+
+  registry.nlark.com/duplexer/0.1.2:
+    resolution: {integrity: sha1-Or5DrvODX4rgd9E23c4PJ2sEAOY=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/duplexer/download/duplexer-0.1.2.tgz}
+    name: duplexer
+    version: 0.1.2
     dev: true
 
   registry.nlark.com/ee-first/1.1.1:
@@ -1976,6 +1984,13 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       mimic-fn: registry.nlark.com/mimic-fn/2.1.0
+    dev: true
+
+  registry.nlark.com/opener/1.5.2:
+    resolution: {integrity: sha1-XTfh81B3udysQwE3InGv3rKhNZg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/opener/download/opener-1.5.2.tgz}
+    name: opener
+    version: 1.5.2
+    hasBin: true
     dev: true
 
   registry.nlark.com/optionator/0.9.1:
@@ -4184,6 +4199,12 @@ packages:
     engines: {node: '>= 8'}
     dev: true
 
+  registry.npmmirror.com/@polka/url/1.0.0-next.21:
+    resolution: {integrity: sha1-XeWiOFo1MJQn9gEZkrVEUU1VmqE=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@polka/url/download/@polka/url-1.0.0-next.21.tgz}
+    name: '@polka/url'
+    version: 1.0.0-next.21
+    dev: true
+
   registry.npmmirror.com/@rollup/plugin-babel/5.3.0_9997319ace8bca27de532a1e218e7823:
     resolution: {integrity: sha1-nLHFFG3daklorZbyCcUMYvkvmHk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@rollup/plugin-babel/download/@rollup/plugin-babel-5.3.0.tgz}
     id: registry.npmmirror.com/@rollup/plugin-babel/5.3.0
@@ -4682,7 +4703,7 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       webpack: registry.npmmirror.com/webpack/5.67.0_webpack-cli@4.9.2
-      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_4df292f2573ba77e77217391b9684f0a
+      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_ba6f9f301f533745de64d2026d9b5344
     dev: true
 
   registry.npmmirror.com/@webpack-cli/info/1.4.1_webpack-cli@4.9.2:
@@ -4694,7 +4715,7 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       envinfo: registry.nlark.com/envinfo/7.8.1
-      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_4df292f2573ba77e77217391b9684f0a
+      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_ba6f9f301f533745de64d2026d9b5344
     dev: true
 
   registry.npmmirror.com/@webpack-cli/serve/1.6.1_abb583c07efb6dcff93351c5e222b339:
@@ -4709,7 +4730,7 @@ packages:
       webpack-dev-server:
         optional: true
     dependencies:
-      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_4df292f2573ba77e77217391b9684f0a
+      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_ba6f9f301f533745de64d2026d9b5344
       webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.7.3_e9a6b0c876bb47b7070003eedf8fe3a2
     dev: true
 
@@ -5899,6 +5920,15 @@ packages:
     version: 4.2.9
     dev: true
 
+  registry.npmmirror.com/gzip-size/6.0.0:
+    resolution: {integrity: sha1-BlNn/VDCOcBnHLy61b4+LusQ5GI=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/gzip-size/download/gzip-size-6.0.0.tgz}
+    name: gzip-size
+    version: 6.0.0
+    engines: {node: '>=10'}
+    dependencies:
+      duplexer: registry.nlark.com/duplexer/0.1.2
+    dev: true
+
   registry.npmmirror.com/he/1.2.0:
     resolution: {integrity: sha1-hK5l+n6vsWX922FWauFLrwVmTw8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/he/download/he-1.2.0.tgz}
     name: he
@@ -6276,6 +6306,13 @@ packages:
     hasBin: true
     dependencies:
       minimist: registry.nlark.com/minimist/1.2.5
+    dev: true
+
+  registry.npmmirror.com/mrmime/1.0.0:
+    resolution: {integrity: sha1-FNOH8FhaUjPSkbq6M5sGN1KiOYs=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mrmime/download/mrmime-1.0.0.tgz}
+    name: mrmime
+    version: 1.0.0
+    engines: {node: '>=10'}
     dev: true
 
   registry.npmmirror.com/ms/2.0.0:
@@ -6900,6 +6937,17 @@ packages:
     version: 3.0.6
     dev: true
 
+  registry.npmmirror.com/sirv/1.0.19:
+    resolution: {integrity: sha512-JuLThK3TnZG1TAKDwNIqNq6QA2afLOCcm+iE8D1Kj3GA40pSPsxQjjJl0J8X3tsR7T+CP1GavpzLwYkgVLWrZQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sirv/download/sirv-1.0.19.tgz}
+    name: sirv
+    version: 1.0.19
+    engines: {node: '>= 10'}
+    dependencies:
+      '@polka/url': registry.npmmirror.com/@polka/url/1.0.0-next.21
+      mrmime: registry.npmmirror.com/mrmime/1.0.0
+      totalist: registry.npmmirror.com/totalist/1.1.0
+    dev: true
+
   registry.npmmirror.com/sockjs/0.3.24:
     resolution: {integrity: sha512-GJgLTZ7vYb/JtPSSZ10hsOYIvEYsjbNU+zPdIHcUaWVNUEPivzxku31865sSSud0Da0W4lEeOPlmw93zLQchuQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/sockjs/download/sockjs-0.3.24.tgz}
     name: sockjs
@@ -7193,6 +7241,13 @@ packages:
     engines: {node: '>=0.6'}
     dev: true
 
+  registry.npmmirror.com/totalist/1.1.0:
+    resolution: {integrity: sha1-pNZaPlRlF3AePlw3pHpwrJf+Vt8=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/totalist/download/totalist-1.1.0.tgz}
+    name: totalist
+    version: 1.1.0
+    engines: {node: '>=6'}
+    dev: true
+
   registry.npmmirror.com/tr46/1.0.1:
     resolution: {integrity: sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/tr46/download/tr46-1.0.1.tgz}
     name: tr46
@@ -7331,7 +7386,28 @@ packages:
       graceful-fs: registry.npmmirror.com/graceful-fs/4.2.9
     dev: true
 
-  registry.npmmirror.com/webpack-cli/4.9.2_4df292f2573ba77e77217391b9684f0a:
+  registry.npmmirror.com/webpack-bundle-analyzer/4.5.0:
+    resolution: {integrity: sha512-GUMZlM3SKwS8Z+CKeIFx7CVoHn3dXFcUAjT/dcZQQmfSZGvitPfMob2ipjai7ovFFqPvTqkEZ/leL4O0YOdAYQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/webpack-bundle-analyzer/download/webpack-bundle-analyzer-4.5.0.tgz}
+    name: webpack-bundle-analyzer
+    version: 4.5.0
+    engines: {node: '>= 10.13.0'}
+    hasBin: true
+    dependencies:
+      acorn: registry.npmmirror.com/acorn/8.7.0
+      acorn-walk: registry.nlark.com/acorn-walk/8.2.0
+      chalk: registry.npmmirror.com/chalk/4.1.2
+      commander: registry.npmmirror.com/commander/7.2.0
+      gzip-size: registry.npmmirror.com/gzip-size/6.0.0
+      lodash: registry.npmmirror.com/lodash/4.17.21
+      opener: registry.nlark.com/opener/1.5.2
+      sirv: registry.npmmirror.com/sirv/1.0.19
+      ws: registry.npmmirror.com/ws/7.5.6
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+    dev: true
+
+  registry.npmmirror.com/webpack-cli/4.9.2_ba6f9f301f533745de64d2026d9b5344:
     resolution: {integrity: sha512-m3/AACnBBzK/kMTcxWHcZFPrw/eQuY4Df1TxvIWfWM2x7mRqBQCqKEd96oCUa9jkapLBaFfRce33eGDb4Pr7YQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/webpack-cli/download/webpack-cli-4.9.2.tgz}
     id: registry.npmmirror.com/webpack-cli/4.9.2
     name: webpack-cli
@@ -7366,6 +7442,7 @@ packages:
       interpret: registry.npmmirror.com/interpret/2.2.0
       rechoir: registry.nlark.com/rechoir/0.7.1
       webpack: registry.npmmirror.com/webpack/5.67.0_webpack-cli@4.9.2
+      webpack-bundle-analyzer: registry.npmmirror.com/webpack-bundle-analyzer/4.5.0
       webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.7.3_e9a6b0c876bb47b7070003eedf8fe3a2
       webpack-merge: registry.npmmirror.com/webpack-merge/5.8.0
     dev: true
@@ -7429,7 +7506,7 @@ packages:
       spdy: registry.npmmirror.com/spdy/4.0.2
       strip-ansi: registry.npmmirror.com/strip-ansi/7.0.1
       webpack: registry.npmmirror.com/webpack/5.67.0_webpack-cli@4.9.2
-      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_4df292f2573ba77e77217391b9684f0a
+      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_ba6f9f301f533745de64d2026d9b5344
       webpack-dev-middleware: registry.npmmirror.com/webpack-dev-middleware/5.3.0_webpack@5.67.0
       ws: registry.npmmirror.com/ws/8.4.2
     transitivePeerDependencies:
@@ -7502,7 +7579,7 @@ packages:
       tapable: registry.npmmirror.com/tapable/2.2.1
       terser-webpack-plugin: registry.npmmirror.com/terser-webpack-plugin/5.3.0_acorn@8.7.0+webpack@5.67.0
       watchpack: registry.npmmirror.com/watchpack/2.3.1
-      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_4df292f2573ba77e77217391b9684f0a
+      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.2_ba6f9f301f533745de64d2026d9b5344
       webpack-sources: registry.npmmirror.com/webpack-sources/3.2.3
     transitivePeerDependencies:
       - '@swc/core'
@@ -7753,6 +7830,21 @@ packages:
     dependencies:
       '@types/trusted-types': registry.npmmirror.com/@types/trusted-types/2.0.2
       workbox-core: registry.npmmirror.com/workbox-core/6.4.2
+    dev: true
+
+  registry.npmmirror.com/ws/7.5.6:
+    resolution: {integrity: sha512-6GLgCqo2cy2A2rjCNFlxQS6ZljG/coZfZXclldI8FB/1G3CCI36Zd8xy2HrFVACi8tfk5XrgLQEk+P0Tnz9UcA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/ws/download/ws-7.5.6.tgz}
+    name: ws
+    version: 7.5.6
+    engines: {node: '>=8.3.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
     dev: true
 
   registry.npmmirror.com/ws/8.4.2:
