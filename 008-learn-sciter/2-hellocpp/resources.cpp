@@ -1,0 +1,1 @@
+$(SCITERSDK)\bin\windows\packfolder.exe ui resources.cpp -v "resources"

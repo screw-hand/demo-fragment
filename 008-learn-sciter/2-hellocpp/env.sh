@@ -1,0 +1,1 @@
+SCITERSDK=/home/wuwu/Desktop/code/sciter-js-sdk

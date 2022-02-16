@@ -1,0 +1,12 @@
+hello {  
+  prototype: Hello url(hello.js);
+  display:block;
+}
+
+hello:expanded > h1 {
+  font-size: 30dip;
+}
+
+hello:collapsed > h1 {
+  font-size: 10dip;
+}
