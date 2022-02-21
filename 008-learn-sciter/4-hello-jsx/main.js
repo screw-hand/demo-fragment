@@ -68,3 +68,5 @@ class Clock extends Element
 }
 
 document.body.patch( <Clock />)
+
+console.log(dom)
