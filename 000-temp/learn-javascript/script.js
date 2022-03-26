@@ -2,13 +2,7 @@ function main() {
   let result = {};
 
   // code start
-  var Foo = function () {
-    this.bar = "bar";
-  };
-  var foo = new Foo();
 
-  result.typeofFoo = typeof Foo;
-  result.typeof_foo = typeof foo;
   // code end
 
   return result;
