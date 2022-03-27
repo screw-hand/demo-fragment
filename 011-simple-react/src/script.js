@@ -37,17 +37,39 @@ function createDom(fiber) {
   return dom
 }
 
+function commitRoot() {
+  // add nodes to dom
+  commitWork(wipRoot.child)
+  currentRoot = wipRoot
+  wipRoot = null
+}
+
+function commitWork(fiber) {
+  if (!fiber) {
+    return
+  }
+
+  const domParent = fiber.parent.dom
+  domParent.appendChild(fiber.dom)
+  commitWork(fiber.child)
+  commitWork(fiber.sibling)
+}
+
 function render(element, container) {
   // set next unit of work
-  nextUnitOfWork = {
+  wipRoot = {
     dom: container,
     props: {
       children: [element],
     },
+    alternate: currentRoot,
   }
+  nextUnitOfWork = wipRoot
 }
 
 let nextUnitOfWork = null
+let currentRoot = null
+let wipRoot = null
 
 function workLoop(deadline) {
   let shouldYield = false
@@ -56,6 +78,9 @@ function workLoop(deadline) {
       nextUnitOfWork
     )
     shouldYield = deadline.timeRemaining() < 1
+  }
+  if (!nextUnitOfWork && wipRoot) {
+    commitRoot()
   }
   requestIdleCallback(workLoop)
 }
@@ -66,11 +91,26 @@ function performUnitOfWork(fiber) {
     fiber.dom = createDom(fiber)
   }
 
-  if (fiber.parent) {
-    fiber.parent.dom.appendChild(fiber.dom)
-  }
-
   const elements = fiber.props.children
+  reconcileChildren(fiber, elements)
+
+  // next fiber will be ...
+  // 1) fiber child
+  // 2) fiber sibling
+  // 3) filer's parent (or parent's parent ...) sibling
+  if (fiber.child) {
+    return fiber.child
+  }
+  let nextFiber = fiber
+  while (nextFiber) {
+    if (nextFiber.sibling) {
+      return nextFiber.sibling
+    }
+    nextFiber = nextFiber.parent
+  }
+}
+
+function reconcileChildren(fiber, elements) {
   let index = 0
   let prevSibling = null // why need the prevSibling ??
 
@@ -92,21 +132,6 @@ function performUnitOfWork(fiber) {
 
     prevSibling = newFiber
     index++
-  }
-
-  // next fiber will be ...
-  // 1) fiber child
-  // 2) fiber sibling
-  // 3) filer's parent (or parent's parent ...) sibling
-  if (fiber.child) {
-    return fiber.child
-  }
-  let nextFiber = fiber
-  while (nextFiber) {
-    if (nextFiber.sibling) {
-      return nextFiber.sibling
-    }
-    nextFiber = nextFiber.parent
   }
 }
 
