@@ -1,17 +1,19 @@
-function log(params , type = 'debug') {
+function log(params, type = "debug") {
   const name = this.name
 
-  let _logMethod = console.log 
+  let _logMethod = console.log
 
   if (type in console) {
     _logMethod = console[type]
   }
- 
- _logMethod(name + ' start') 
- _logMethod(
-   params ? Object.keys(params).map(k => params[k]) : null
- )
- _logMethod(name + ' end') 
+
+  _logMethod(name + " start")
+  _logMethod(
+    params
+      ? Object.keys(params).map((k) => params[k])
+      : null
+  )
+  _logMethod(name + " end")
 }
 
 function createElement(type, props, ...children) {
@@ -122,9 +124,14 @@ function commitWork(fiber) {
   if (!fiber) {
     return
   }
+
   log.call(commitWork, fiber)
 
-  const domParent = fiber.parent.dom
+  let domParentFiber = fiber.parent
+  while (!domParentFiber.dom) {
+    domParentFiber = domParentFiber.parent
+  }
+  const domParent = domParentFiber.dom
 
   if (
     fiber.effectTag === "PLACEMENT" &&
@@ -141,11 +148,19 @@ function commitWork(fiber) {
       fiber.props
     )
   } else if (fiber.effectTag === "DELETION") {
-    domParent.removeChild(fiber.dom)
+    commitDeletion(fiber, domParent)
   }
 
   commitWork(fiber.child)
   commitWork(fiber.sibling)
+}
+
+function commitDeletion(fiber, domParent) {
+  if (fiber.dom) {
+    domParent.removeChild(fiber.dom)
+  } else {
+    commitDeletion(fiber, child, domParent)
+  }
 }
 
 function render(element, container) {
@@ -187,12 +202,15 @@ requestIdleCallback(workLoop)
 
 function performUnitOfWork(fiber) {
   log.call(performUnitOfWork, arguments)
-  if (!fiber.dom) {
-    fiber.dom = createDom(fiber)
-  }
 
-  const elements = fiber.props.children
-  reconcileChildren(fiber, elements)
+  const isFunctionComponent =
+    fiber.type instanceof Function
+
+  if (isFunctionComponent) {
+    updateFunctionComponent(fiber)
+  } else {
+    updateHostComponent(fiber)
+  }
 
   // next fiber will be ...
   // 1) fiber child
@@ -208,6 +226,19 @@ function performUnitOfWork(fiber) {
     }
     nextFiber = nextFiber.parent
   }
+}
+
+function updateFunctionComponent(fiber) {
+  log.call(updateFunctionComponent, fiber)
+  const children = [fiber.type(fiber.props)]
+  reconcileChildren(fiber, children)
+}
+
+function updateHostComponent(fiber) {
+  if (!fiber.dom) {
+    fiber.dom = createDom(fiber)
+  }
+  reconcileChildren(fiber, fiber.props.children)
 }
 
 function reconcileChildren(wipFiber, elements) {
@@ -288,18 +319,10 @@ const Didact = {
 /** @jsx Didact.createElement */
 const container = document.getElementById("root")
 
-const updateValue = (e) => {
-  rerender(e.target.value)
+function App(props) {
+  return <h1>{props.name}</h1>
 }
 
-const rerender = (value) => {
-  const element = (
-    <div id="root-id">
-      <input onInput={updateValue} value={value} />
-      <h2>Hello {value}</h2>
-    </div>
-  )
-  Didact.render(element, container)
-}
+const element = <App name="foo" />
 
-rerender("World")
+Didact.render(element, container)
