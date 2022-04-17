@@ -1,4 +1,21 @@
+function log(params , type = 'debug') {
+  const name = this.name
+
+  let _logMethod = console.log 
+
+  if (type in console) {
+    _logMethod = console[type]
+  }
+ 
+ _logMethod(name + ' start') 
+ _logMethod(
+   params ? Object.keys(params).map(k => params[k]) : null
+ )
+ _logMethod(name + ' end') 
+}
+
 function createElement(type, props, ...children) {
+  log.call(createElement, arguments)
   return {
     type,
     props: {
@@ -23,7 +40,7 @@ function createTextElement(text) {
 }
 
 function createDom(fiber) {
-  // console.log(fiber.type, fiber.props.children, fiber.props.nodeValue);
+  log.call(createDom, arguments)
   const dom =
     fiber.type == "TEXT_ELEMENT"
       ? document.createTextNode("")
@@ -43,6 +60,7 @@ const isGone = (prev, next) => (key) =>
   !(key in next)
 
 function updateDom(dom, prevProps, nextProps) {
+  log.call(updateDom, arguments)
   // Remove old or change event listeners
   Object.keys(prevProps)
     .filter(isEvent)
@@ -93,6 +111,7 @@ function updateDom(dom, prevProps, nextProps) {
 }
 
 function commitRoot() {
+  log.call(commitRoot, wipRoot)
   deletions.forEach(commitWork)
   commitWork(wipRoot.child)
   currentRoot = wipRoot
@@ -103,6 +122,7 @@ function commitWork(fiber) {
   if (!fiber) {
     return
   }
+  log.call(commitWork, fiber)
 
   const domParent = fiber.parent.dom
 
@@ -129,6 +149,7 @@ function commitWork(fiber) {
 }
 
 function render(element, container) {
+  log.call(render, arguments)
   // set next unit of work
   wipRoot = {
     dom: container,
@@ -165,6 +186,7 @@ function workLoop(deadline) {
 requestIdleCallback(workLoop)
 
 function performUnitOfWork(fiber) {
+  log.call(performUnitOfWork, arguments)
   if (!fiber.dom) {
     fiber.dom = createDom(fiber)
   }
