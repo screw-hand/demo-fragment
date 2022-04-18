@@ -7,13 +7,12 @@ function log(params, type = "debug") {
     _logMethod = console[type]
   }
 
-  _logMethod(name + " start")
+  _logMethod(name + " >>>>>")
   _logMethod(
     params
       ? Object.keys(params).map((k) => params[k])
       : null
   )
-  _logMethod(name + " end")
 }
 
 function createElement(type, props, ...children) {
@@ -240,6 +239,7 @@ function updateFunctionComponent(fiber) {
 }
 
 function useState(initial) {
+  log.call(useState, initial)
   const oldHook =
     wipFiber.alternate &&
     wipFiber.alternate.hooks &&
@@ -358,9 +358,17 @@ const container = document.getElementById("root")
 
 function Counter(props) {
   const [state, setState] = Didact.useState(1)
+  const [s1, setS1] = Didact.useState('s1')
+
+  const handleClick = () => {
+    setState(_ => _ + 1)
+    setS1(_=> _ + '0')
+    setState(_ => _ + 2)
+    setState(_ => _ + 3)
+  }
 
   return (
-    <h1 onClick={() => setState((c) => c+1)}>
+    <h1 onClick={handleClick}>
       Count: {state}
     </h1>
   )
