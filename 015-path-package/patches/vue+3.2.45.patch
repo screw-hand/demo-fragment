@@ -1,0 +1,17 @@
+diff --git a/node_modules/vue/dist/vue.global.js b/node_modules/vue/dist/vue.global.js
+index 2124b65..6014190 100644
+--- a/node_modules/vue/dist/vue.global.js
++++ b/node_modules/vue/dist/vue.global.js
+@@ -15929,6 +15929,12 @@ var Vue = (function (exports) {
+   }
+   registerRuntimeCompiler(compileToFunction);
+ 
++  /* =============== */
++  console.log(123);
++  exports.attr = 'attr';
++
++  /* =============== */
++
+   exports.BaseTransition = BaseTransition;
+   exports.Comment = Comment;
+   exports.EffectScope = EffectScope;
