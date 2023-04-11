@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/TodoApi/TodoApi.csproj": {}
+    "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/TodoApi.csproj": {}
   },
   "projects": {
-    "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/TodoApi/TodoApi.csproj": {
+    "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/TodoApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/TodoApi/TodoApi.csproj",
+        "projectUniqueName": "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/TodoApi.csproj",
         "projectName": "TodoApi",
-        "projectPath": "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/TodoApi/TodoApi.csproj",
+        "projectPath": "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/TodoApi.csproj",
         "packagesPath": "/Users/wu/.nuget/packages/",
-        "outputPath": "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/TodoApi/obj/",
+        "outputPath": "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/wu/.nuget/NuGet/NuGet.Config"
@@ -43,10 +43,25 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[5.0.17, 5.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -55,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/wu/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }

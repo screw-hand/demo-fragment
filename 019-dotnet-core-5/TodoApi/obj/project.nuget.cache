@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "VVdAYY6j1s0WiEVB7RIr0u+0QghB5FFDkLa2rAf/5fyQHEaywLUhVb3dug/zeIQsJLg2VwsSLCKVAyLi68IEGg==",
+  "success": true,
+  "projectFilePath": "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/TodoApi.csproj",
+  "expectedPackageFiles": [
+    "/Users/wu/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/wu/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.17/microsoft.netcore.app.host.osx-x64.5.0.17.nupkg.sha512",
+    "/Users/wu/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
