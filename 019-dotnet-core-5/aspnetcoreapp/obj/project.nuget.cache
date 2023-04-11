@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "z/ep4aV7J+/c1AUabxyZsPlVlTRTAU/A8Sj7CtchBFDkzuq+6xKpYUGuDgQpTb26mN+5t5zw1EKci0s12aePbA==",
+  "dgSpecHash": "zaUEsI0OyM3xZhOwTr1NS5sl3cq7Lad57Go/IqKg+oxf+J3E34GsiGScWpby8oVBp15nv7x7zT6/zLFHcbBqFA==",
   "success": true,
   "projectFilePath": "/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/aspnetcoreapp/aspnetcoreapp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/wu/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/wu/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/wu/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.17/microsoft.netcore.app.host.osx-x64.5.0.17.nupkg.sha512"
+  ],
   "logs": []
 }
