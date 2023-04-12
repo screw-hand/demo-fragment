@@ -1,25 +1,37 @@
 ﻿<Properties StartupConfiguration="{6421C15D-8C93-4F44-98B3-4E240277D232}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.TodoApi PreferredExecutionTarget="/Applications/Microsoft Edge.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/wu/Documents/code/demo-fragment/019-dotnet-core-5/TodoApi/Controllers/TodoItemsController.cs" relfile="Controllers/TodoItemsController.cs" line="80" column="13" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/TodoItemsController.cs">
+    <Files>
+      <File FileName="Controllers/TodoItemsController.cs" Line="23" Column="30" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
+          <Option id="ShowAllFiles" value="True" />
           <Node name="TodoApi" expanded="True">
             <Node name="TodoApi" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="FrameworkReferences" expanded="True" />
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True">
+                <Node name="TodoItemsController.cs" selected="True" />
               </Node>
-              <Node name="appsettings.json" expanded="True" selected="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.TodoApi PreferredExecutionTarget="/Applications/Microsoft Edge.app" FirstBuild="True" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <DisabledProjects>
+    <String>TodoApi/TodoApi.csproj</String>
+  </DisabledProjects>
 </Properties>
