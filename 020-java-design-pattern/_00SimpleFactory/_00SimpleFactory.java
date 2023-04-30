@@ -1,9 +1,9 @@
+package _00SimpleFactory;
+
 /**
  * 简单工厂模式
- * 
- * @deprecated
- *             定义一个工厂累，根据不同参数返回不同的实例
- *             被创建的实例通常都有共同的父类
+ * 定义一个工厂累，根据不同参数返回不同的实例
+ * 被创建的实例通常都有共同的父类
  */
 class SimpleFactory {
   public static void main(String[] args) {

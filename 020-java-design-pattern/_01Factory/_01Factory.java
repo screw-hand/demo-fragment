@@ -1,3 +1,5 @@
+package _01Factory;
+
 /**
  * 工厂方法
  * 
@@ -11,19 +13,19 @@ interface Product {
   public void info();
 }
 
-interface Factory {
+interface _01Factory {
   public Product createProduct();
 }
 
 
-class FactoryA implements Factory {
+class FactoryA implements _01Factory {
   @Override
   public Product createProduct() {
     return new ProductA();
   }
 }
 
-class FactoryB implements Factory {
+class FactoryB implements _01Factory {
   @Override
   public Product createProduct() {
     return new ProductB();
@@ -46,11 +48,11 @@ class ProductB implements Product {
 
 class FactoryMethod {
   public static void main(String[] args) {
-    Factory factoryA = new FactoryA();
+    _01Factory factoryA = new FactoryA();
     Product productA = factoryA.createProduct();
     productA.info();
 
-    Factory factoryB = new FactoryB();
+    _01Factory factoryB = new FactoryB();
     Product productB = factoryB.createProduct();
     productB.info();
   }
