@@ -8,7 +8,7 @@ import java.util.*;
  * 将一个复杂对象的构建与它的表现分离，使得同样的构建过程可以创建不同的表示。
  */
 class Main {
-  public static void main (String[] args) {
+  public static void main(String[] args) {
     Direactor direactor = new Direactor();
 
     // Builder type 1
@@ -26,20 +26,22 @@ class Main {
 }
 
 class Direactor {
-  public void construct (Builder builder) {
+  public void construct(Builder builder) {
     builder.buildPart();
   }
 }
 
 abstract class Builder {
   abstract public void buildPart();
+
   abstract public Product getResult();
 }
 
 class Builder1 extends Builder {
   Product product = new Product();
+
   @Override
-  public void buildPart () {
+  public void buildPart() {
     product.add("A");
     product.add("B");
     product.add("C");
@@ -48,15 +50,16 @@ class Builder1 extends Builder {
   }
 
   @Override
-  public Product getResult () {
+  public Product getResult() {
     return product;
   }
 }
 
 class Builder2 extends Builder {
   Product product = new Product();
+
   @Override
-  public void buildPart () {
+  public void buildPart() {
     product.add("F");
     product.add("G");
     product.add("H");
@@ -65,21 +68,21 @@ class Builder2 extends Builder {
   }
 
   @Override
-  public Product getResult () {
+  public Product getResult() {
     return product;
   }
 }
 
-class Product  {
+class Product {
   List<String> parts = new ArrayList<String>();
 
-  public void add (String part) {
+  public void add(String part) {
     parts.add(part);
   }
 
-  public void show () {
+  public void show() {
     System.out.println("产品组成为：");
-    for (String s: parts) {
+    for (String s : parts) {
       System.out.println(s);
     }
   }
