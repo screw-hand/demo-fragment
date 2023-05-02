@@ -11,19 +11,19 @@ interface Product {
   public void info();
 }
 
-interface _01Factory {
+interface Factory {
   public Product createProduct();
 }
 
 
-class FactoryA implements _01Factory {
+class FactoryA implements Factory {
   @Override
   public Product createProduct() {
     return new ProductA();
   }
 }
 
-class FactoryB implements _01Factory {
+class FactoryB implements Factory {
   @Override
   public Product createProduct() {
     return new ProductB();
@@ -46,11 +46,11 @@ class ProductB implements Product {
 
 class FactoryMethod {
   public static void main(String[] args) {
-    _01Factory factoryA = new FactoryA();
+    Factory factoryA = new FactoryA();
     Product productA = factoryA.createProduct();
     productA.info();
 
-    _01Factory factoryB = new FactoryB();
+    Factory factoryB = new FactoryB();
     Product productB = factoryB.createProduct();
     productB.info();
   }

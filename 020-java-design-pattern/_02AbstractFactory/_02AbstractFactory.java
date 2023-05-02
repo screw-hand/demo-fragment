@@ -2,56 +2,97 @@ package _02AbstractFactory;
 
 /**
  * 工厂方法
- * 定义一个用于创建对象的接口
- * 让子类去决定实例化哪一个类
- * Factory Method使一个类的实例化延迟到子类
+ * 
+ * 提供一个创建一系列相关或互相依赖对象的接口
+ * 而无需制定他们具体的类
  */
 
-interface Product {
+class AbstractFactory {
+  public static void main (String[] args) {
+    Factory factory1 = new Factory1();
+    ProductA productA1 = factory1.createProductA();
+    productA1.info();
+
+    ProductB productB1 = factory1.createProductB();
+    productB1.info();
+
+    Factory factory2 = new Factory2();
+
+    ProductA productA2 = factory2.createProductA();
+    productA2.info();
+
+    ProductB productB2 = factory2.createProductB();
+    productB2.info();
+
+  }
+}
+
+interface ProductA {
   public void info();
 }
 
+interface ProductB {
+  public void info();
+}
+
+class ProductA1 implements ProductA {
+  @Override
+  public void info () {
+    System.out.println("产品的信息：A1");
+  }
+}
+
+class ProductA2 implements ProductA {
+
+  @Override
+  public void info() {
+      System.out.println("产品的信息：A2");
+  }
+}
+
+
+class ProductB1 implements ProductB {
+  @Override
+  public void info () {
+    System.out.println("产品的信息：B1");
+  }
+}
+
+class ProductB2 implements ProductB {
+
+  @Override
+  public void info() {
+      System.out.println("产品的信息：B2");
+  }
+}
+
 interface Factory {
-  public Product createProduct();
+  public ProductA createProductA();
+  public ProductB createProductB();
 }
 
-
-class FactoryA implements Factory {
+class Factory1 implements Factory {
   @Override
-  public Product createProduct() {
-    return new ProductA();
+  public ProductA createProductA() {
+      return new ProductA1();
+  }
+
+  @Override
+  public ProductB createProductB() {
+      return new ProductB1();
   }
 }
 
-class FactoryB implements Factory {
+
+class Factory2 implements Factory {
+
   @Override
-  public Product createProduct() {
-    return new ProductB();
+  public ProductA createProductA() {
+      return new ProductA2();
   }
-}
 
-class ProductA implements Product {
   @Override
-  public void info() {
-    System.out.println("ProductA");
-  }
-}
-
-class ProductB implements Product {
-  @Override
-  public void info() {
-    System.out.println("ProductB");
-  }
-}
-
-class FactoryMethod {
-  public static void main(String[] args) {
-    Factory factoryA = new FactoryA();
-    Product productA = factoryA.createProduct();
-    productA.info();
-
-    Factory factoryB = new FactoryB();
-    Product productB = factoryB.createProduct();
-    productB.info();
+  public ProductB createProductB() {
+      return new ProductB2();
   }
 }
