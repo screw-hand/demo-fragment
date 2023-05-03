@@ -4,7 +4,7 @@ package _02AbstractFactory;
  * 工厂方法
  * 
  * 提供一个创建一系列相关或互相依赖对象的接口
- * 而无需制定他们具体的类
+ * 而无需指定他们具体的类
  */
 
 class AbstractFactory {
