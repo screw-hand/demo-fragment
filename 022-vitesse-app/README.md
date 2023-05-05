@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="./.github/images/preview.png" width="300"/>
-</p>
-
 <h2 align="center">
 Vitesse for uni-app
 </h2>
@@ -13,11 +9,11 @@ Vitesse for uni-app
 
 - ⚡️ [Vue 3](https://github.com/vuejs/core), [Vite](https://github.com/vitejs/vite), [pnpm](https://pnpm.io/), [esbuild](https://github.com/evanw/esbuild) - 就是快！
 
-- 🗂 [基于文件的路由](./src/pages)
+- 🗂 [基于文件的路由](./src/pages) [uni-helper/vite-plugin-uni-pages: 为 VIte 下的 uni-app 提供基于文件系统的路由](https://github.com/uni-helper/vite-plugin-uni-pages)
 
 - 📦 [组件自动化加载](./src/components)
 
-- 📑 [布局系统](./src/layouts)
+- 📑 [布局系统](./src/layouts) [uni-helper/vite-plugin-uni-layouts: 为 Vite 下的 uni-app 提供类 nuxt 的 layouts 系统](https://github.com/uni-helper/vite-plugin-uni-layouts)
 
 - 🎨 [UnoCSS](https://github.com/unocss/unocss) - 高性能且极具灵活性的即时原子化 CSS 引擎
 
