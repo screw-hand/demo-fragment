@@ -42,7 +42,7 @@
     "type-check": "vue-tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "postinstall": "npx simple-git-hooks"
+    "postinstall": "npx simple-git-hooks && bash ./bin/cp-esbuild-darwin.sh"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-3071120230427001",
