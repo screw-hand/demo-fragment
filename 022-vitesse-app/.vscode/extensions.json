@@ -5,8 +5,7 @@
     "antfu.unocss",
     "vue.volar",
     "dbaeumer.vscode-eslint",
-    "editorconfig.editorconfig",
-    "uni-helper.uni-helper-vscode",
-    "vue.vscode-typescript-vue-plugin"
+    "editorConfig.editorConfig",
+    "uni-helper.uni-helper-vscode"
   ]
 }

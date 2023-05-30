@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -ex
+
+REPO_URL=https://github.com/uni-helper/vitesse-uni-app.git
+DEFULAT_BRANCH=main
+
+git init
+
+git add .
+
+git commit -m "chore: init"
+
+git remote add upstream $REPO_URL
+
+git fetch upstream
+
+git merge upstream/main --allow-unrelated-histories
+
+# don't sync the .github folder
+rm -rf .github
+git add .github
+
+git status
+
