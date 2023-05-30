@@ -122,3 +122,5 @@ dist
 006-webpack4/dll
 
 dist*
+
+./022vitess-app/.git
