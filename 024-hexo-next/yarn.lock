@@ -685,7 +685,7 @@ hexo-renderer-ejs@^2.0.0:
   dependencies:
     ejs "^3.1.6"
 
-hexo-renderer-marked@^6.0.0:
+hexo-renderer-marked@^6.1.0:
   version "6.1.0"
   resolved "https://registry.npmmirror.com/hexo-renderer-marked/-/hexo-renderer-marked-6.1.0.tgz#c76c69e586f3446b40e972e41bfe8d6fd7618211"
   integrity sha512-KuVuaYFyKfbJj5dtwoWMwTNbe7rk+UuVR/tGzLXbQ05AWO5ob6xpFHbfeSyzSDt4ccYLzaKJBRduDWHd2f6bSQ==
