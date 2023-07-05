@@ -1,0 +1,14 @@
+{
+  "name": "node-cli-me",
+  "version": "1.0.0",
+  "description": "description\n, it's just for me.",
+  "main": "src/index.js",
+  "bin": {
+    "cli-me": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
