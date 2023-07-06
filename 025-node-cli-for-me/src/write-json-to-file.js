@@ -1,10 +1,11 @@
 const fs = require('fs');
+const parseParmas = require('./utils/parse-params');
 
-// 定义你的函数
-function writeJsonToFile(obj, filename) {
-  let jsonStr = JSON.stringify(obj, null, 2);
-  fs.writeFileSync(filename, jsonStr);
-  console.log(`Data written to file ${filename}`);
+function writeJsonToFile(args) {
+  const { json, file } = parseParmas(args, ["json", "file"]);
+  let jsonStr = JSON.stringify(json, null, 2);
+  fs.writeFileSync(file, jsonStr);
+  console.log(`Data written to file ${file}`);
 }
 
 module.exports = writeJsonToFile;
