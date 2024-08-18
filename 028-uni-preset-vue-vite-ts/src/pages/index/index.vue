@@ -4,20 +4,48 @@
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
-    <uni-badge text="1"></uni-badge>
-    <uni-badge text="2" type="success" @click="bindClick"></uni-badge>
-    <uni-badge text="3" type="primary" :inverted="true"></uni-badge>
+
+    <uni-data-picker
+      v-model="selectedValue1"
+      :disabled="true"
+      :localdata="[
+        { text: '选项1', value: '1' },
+        { text: '选项2', value: '2' },
+        { text: '选项3', value: '3' },
+      ]"
+    />
+
+    <!-- 可正常使用disable -->
+    <uni-data-select
+      v-model="selectedValue1"
+      :disabled="true"
+      :localdata="[
+        { text: '选项1', value: '1' },
+        { text: '选项2', value: '2' },
+        { text: '选项3', value: '3' },
+      ]"
+    />
+
+    <uni-combox
+      v-model="selectedValue2"
+      :disabled="true"
+      :candidates="['选项1', '选项2', '选项3']"
+    />
   </view>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-// import uniBadge from '@dcloudio/uni-ui'
-import uniBadge from '@dcloudio/uni-ui/lib/uni-badge/uni-badge.vue'
-
-console.log(uniBadge)
+import { ref, onMounted } from 'vue'
 
 const title = ref('Hello')
+
+const selectedValue1 = ref()
+const selectedValue2 = ref()
+
+onMounted(() => {
+  selectedValue1.value = '2'
+  selectedValue2.value = '选项2'
+})
 </script>
 
 <style>
