@@ -17,8 +17,10 @@ yarn link "@dcloudio/uni-ui"
 ls -last node_modules/@dcloudio/uni-ui
 # 0 lrwxrwxrwx 1 wuwu wuwu 52 Aug 17 23:52 node_modules/@dcloudio/uni-ui -> ../../../../../../.config/yarn/link/@dcloudio/uni-ui
 
+# check src/pages.json easycom/custom uni-(.*) config
+
 # run
-yarn run dev:h5&
+yarn run dev:h5
 nvim .
 ```
 
