@@ -1,0 +1,52 @@
+# Python虚拟环境
+venv/
+env/
+ENV/
+.venv/
+.env/
+*venv/
+*env/
+
+# 特定项目虚拟环境
+mygpt/
+mygpt_*/
+
+# Python编译缓存
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+*.egg
+
+# 单元测试 / 覆盖率报告
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# VSCode
+.vscode/
+
+# PyCharm
+.idea/
+*.iml
+
+# macOS
+.DS_Store
+
+# 环境变量文件
+.env
