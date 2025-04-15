@@ -2475,8 +2475,8 @@ That Ancus Marcius, Numa's daughter's son,
 Who, after great Hostilius, here was king;
 Of the same house Publius and Quintus were,
 That our beat water brought by conduits hither;
-And  
-Twice being  
+And
+Twice being
 Was his great ancestor.
 
 SICINIUS:
@@ -39998,4 +39998,3 @@ ANTONIO:
 Noble Sebastian,
 Thou let'st thy fortune sleep--die, rather; wink'st
 Whiles thou art waking.
-{"code":0,"message":"","data":[]}
